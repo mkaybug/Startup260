@@ -35,5 +35,10 @@ The possible list of TLDs is controlled by ICANN, one of the governing boards of
 ...`
 You can look up the technical contact, who to contact with problems, or the admin contact if you want to buy.
 ## DNS (Domain Name System)
+
+# Caddy
+What does it mean when there's a little lock symbol in the upper right of the page next to the URL? -> the information travelling back and forth is encrypted.
+
+Caddy was created by a student from BYU!
 ## A records and CNAME records
 A domain name is used to create DNS records that map domain names to IP addresses (A records) or other domain names (CNAME records).

@@ -16,3 +16,22 @@ If warning that key pair file permissions are too open:
 ```
 -> `chmod 600 Kaybugging.pem`
 ```
+# Domain Names
+You can get the IP address for any domain using the `dig` console utility.
+
+amazon.com has more than one IP address associated with its domain name in case one isn't responding.
+
+## Root Domain
+Represented by a secondary level domain and a top level domain.
+
+The owner of a root domain can create any number of subdomains. Ex. travel.cs260.click, finance.cs260.click, etc.
+## Top Level Domain (TDL)
+Represents things like com, edu, or click. A root domain would look like: byu.edu, google.com, cs260.click, etc.
+
+The possible list of TLDs is controlled by ICANN, one of the governing boards of the internet.
+
+# How to get info on Domain Names
+`-> whois byu.edu
+...`
+You can look up the technical contact, who to contact with problems, or the admin contact if you want to buy.
+## DNS (Domain Name System)

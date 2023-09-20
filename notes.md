@@ -7,6 +7,7 @@ Key Pair file: Kaybugging.pem
 -> ssh -i Kaybugging.pem ubuntu@18.210.220.50
 ```
 The `Caddyfile` is the configuration file for your web service gateway. The `public_html` directory contains all of the static files that you are serving up directly through Caddy when using it as a web service. We will cover Caddy configuration in a later instruction. The `services` directory is the place where you are going to install all of your web services once you build them.
+
 Need to exit?
 ```
 -> exit

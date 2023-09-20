@@ -3,11 +3,11 @@ When one device wants to talk to another it must have an IP address. For example
 ## Server
 Key Pair file: Kaybugging.pem
 ### Remote Shell Into Server
-'''
+```
 -> ssh -i Kaybugging.pem ubuntu@18.210.220.50
 -> exit
-'''
+```
 If warning that key pair file permissions are too open:
-'''
--> 'chmod 600 Kaybugging.pem'
-'''
+```
+-> `chmod 600 Kaybugging.pem`
+```

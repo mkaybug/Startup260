@@ -42,3 +42,8 @@ What does it mean when there's a little lock symbol in the upper right of the pa
 Caddy was created by a student from BYU!
 ## A records and CNAME records
 A domain name is used to create DNS records that map domain names to IP addresses (A records) or other domain names (CNAME records).
+
+# HTML Introduction
+Where is the interpreter for HTML? It's the browser! And, it's not too strict. Still, try to be clean and neat and accurate.
+### (W3schools.com)
+Proffessor's favorite HTML learning tool.

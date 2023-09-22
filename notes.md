@@ -46,4 +46,4 @@ A domain name is used to create DNS records that map domain names to IP addresse
 # HTML Introduction
 Where is the interpreter for HTML? It's the browser! And, it's not too strict. Still, try to be clean and neat and accurate.
 ### (W3schools.com)
-Proffessor's favorite HTML learning tool.
+Proffessor Clement's favorite HTML learning tool.

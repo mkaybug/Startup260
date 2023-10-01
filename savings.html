@@ -1,3 +1,6 @@
+<!-- To be perfectly honest, I'm still figuring out how I want this page to work. I may include a progress bar later.
+For now, this page displays the users savings goal (if they have one) and provides an entry field for them to enter a new one.
+It will also display the programs calculations on the user's progress towards their current goal  -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -24,6 +27,7 @@
         <main>
             <h1>Savings Tool</h1>
             <h3>Your Goal:</h3>
+            <div id="savingsgoal"></div>
       
             <form>
                 <input type="text" id="goal" placeholder="Amount" />
@@ -32,7 +36,7 @@
             <button type="submit">Create New Goal</button>
 
             <h3>Progress:</h3>
-            <div id="result"></div>
+            <div id="progress"></div>
         </main>
 
         <footer>

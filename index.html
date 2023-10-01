@@ -1,3 +1,4 @@
+<!-- I've left in some of the comments from the Simon code to help me throughout development -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,8 +6,8 @@
     <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Startup HTML</title>
-    <link rel="icon" href="favicon.ico" />
   </head>
+
   <body>
     <!-- Use header, main, and footer elements to give semantic structure -->
     <header>
@@ -30,15 +31,18 @@
 
     <main>
       <h1>Welcome</h1>
+
       <form method="get" action="mypi.html">
         <label for="name">Username</label>
         <input type="text" id="name" placeholder="Username" />
       </form>
+
       <form method="get" action="mypi.html">
         <label for="name">Password</label>
         <input type="text" id="name" placeholder="Password" />
       </form>
-<!--    This may be a problem later, the button was originally inside the form, if functionality isn't there, change it back    -->
+
+    <!-- This may be a problem later, the button was originally inside the form, if functionality isn't there, change it back -->
       <button type="submit">Login</button>
     </main>
 

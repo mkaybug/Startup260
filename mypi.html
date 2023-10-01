@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Tell browsers not to scale the viewport automatically -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Startup HTML</title>
+  </head>
+  <body>
+    <header>
+      <h1>Budgeting Tool</h1>
+      <nav>
+        <menu>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mypi.html">Budget</a></li>
+          <li><a href="expenses.html">Expenses</a></li>
+          <li><a href="savings.html">Savings Tool</a></li>
+          <li><a href="about.html">About</a></li>
+        </menu>
+      </nav>
+      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
+      <hr />
+    </header>
+    
+    <main>
+      <h1>MyPi</h1>
+      <label for="income">Income<br></label>
+      <input type="text" id = "income">
+      <div id="output"></div>
+<!--    Here's the code for the pie chart. This is going to need editing later when we get to CSS and JavaScript.    -->
+<!--    At the moment it's just a visual place holder. I want it to be dynamic, so we'll fix that later in CSS and JavaScript    -->
+      <svg width="200" height="200">
+        <!-- Create the circle representing the background -->
+        <circle cx="100" cy="100" r="80" fill="lightgray" />
+
+        <!-- Create a slice for the pie chart -->
+        <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="blue" />
+        
+        <!-- Calculate the midpoint of the slice's arc -->
+        <text x="144" y="48" font-size="14" fill="white" text-anchor="middle" dominant-baseline="middle">25%</text>
+      </svg>
+      <table id="myTable">
+        <tr>
+            <th>Category</th>
+            <th>Budget Allotment</th>
+        </tr>
+        <tr>
+            <td>Cateogry1</td>
+            <td>Percentage</td>
+        </tr>
+    </table>
+
+    <form>
+        <input type="text" id="category" placeholder="Category Name" />
+        <input type="text" id="budget" placeholder="Percentage" />
+    </form>
+    <button onclick="addCategory()">Add</button>
+    <button onclick="removeCategory()">Remove</button>
+    </main>
+    
+    <footer>
+      <hr />
+      <span class="text-reset">Makayla Black</span>
+      <br />
+      <a href="https://github.com/mkaybug/startup.git">GitHub</a>
+    </footer>
+  </body>
+</html>

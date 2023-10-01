@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Tell browsers not to scale the viewport automatically -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Startup HTML</title>
+  </head>
+  <body>
+    <header>
+      <h1>Budgeting Tool</h1>
+      <nav>
+        <menu>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mypi.html">Budget</a></li>
+          <li><a href="expenses.html">Expenses</a></li>
+          <li><a href="savings.html">Savings Tool</a></li>
+          <li><a href="about.html">About</a></li>
+        </menu>
+      </nav>
+      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
+      <hr />
+    </header>
+    
+    <main>
+      <h1>Expenses</h1>
+      <h3>Remaining Income:</h3>
+      
+      <form>
+        <input type="text" id="Category" placeholder="Category" />
+        <input type="text" id="description" placeholder="Description" />
+        <input type="text" id="amount" placeholder="Amount" />
+        
+    </form>
+    <button onclick="addRow()">Add Expense</button>
+    <button onclick="removeRow()">Remove Expense</button>
+      
+      <table id="myTable">
+        <tr>
+            <th>Category1</th>
+            <th>Description1</th>
+            <th>Amount1</th>
+        </tr>
+        <tr>
+            <td>Category</td>
+            <td>Description</td>
+            <td>Amount</td>
+        </tr>
+    </table>
+    </main>
+    
+    <footer>
+      <hr />
+      <span class="text-reset">Makayla Black</span>
+      <br />
+      <a href="https://github.com/mkaybug/startup.git">GitHub</a>
+    </footer>
+  </body>
+</html>

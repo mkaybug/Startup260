@@ -49,3 +49,60 @@ Where is the interpreter for HTML? It's the browser! And, it's not too strict. S
 Proffessor Clement's favorite HTML learning tool.
 ## Tip
 Start a portfolio for yourself, create a gitHub repository, perhaps even "buy your name" so that when an employer googles you, they get your website as the top hit.
+
+# CSS
+Use BootStrap! But not for this project (at first). Bootstrap is used by everybody, so your website will be familiar to your user.
+
+Functionally, CSS is concerend with rulesets (rules). A rule is comprised of a `selector` that selects the elements to apply the rule to, and one or more `declarations` that represent the `property` to style with the given `property value`.
+
+```css
+p {
+  font-family: sans-serif;
+  font-size: 2em;
+  color: navy;
+  text-shadow: 3px 3px 1px #cccccc;
+}
+```
+
+The selector `p` selects all paragraph elements in the HTML document. The four specified declarations then: 1) change the font to use a sans-serif font, 2) increase the font size to be twice as big as the default font, 3) change the text color to be navy, and 4) create a gray shadow for the text. The result looks like this.
+
+## Associating HTML and CSS
+There are three ways to associate HTML and CSS: 
+
+1. Use `style` attribute of HTML to explicitly assign one or more declarations.
+
+```html
+<p style="color:green">CSS</p>
+```
+
+2. Use `style` attribute to define CSS rules within the HTML document. Should appear in the `head` element of the document so rules apply to the whole document.
+
+```html
+<head>
+  <style>
+    p {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <p>CSS</p>
+</body>
+```
+
+3. Use HTML element `link` to reference external CSS file.
+
+```html
+<link rel="stylesheet" href="styles.css" />
+```
+
+**styles.css**
+
+```css
+p {
+  color: green;
+}
+```
+
+# JavaScript
+Always set your script at the end of the body. That way your website will render first, so your user can see something, and then the functionality will load in.

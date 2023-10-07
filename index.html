@@ -1,57 +1,37 @@
-<!-- I've left in some of the comments from the Simon code to help me throughout development -->
-<!DOCTYPE html>
+<!DOCTYPE htm>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Tell browsers not to scale the viewport automatically -->
+<!-- Tells browers not to scale automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Startup HTML</title>
+    <title>Startup CSS</title>
+    
+    <link rel="stylesheet" href="main.css" />
   </head>
 
-  <body>
-    <!-- Use header, main, and footer elements to give semantic structure -->
-    <header>
-      <h1>Budgeting Tool</h1>
-
-      <!-- Navigation elements -->
-      <nav>
-        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
-        <!-- For now, I've decided to include the menu on every page of my application, including the login page -->
-        <menu>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="mypi.html">Budget</a></li>
-          <li><a href="mypi.html">Expenses</a></li>
-          <li><a href="savings.html">Savings Tool</a></li>
-          <li><a href="about.html">About</a></li>
-        </menu>
-      </nav>
-
-      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
-      <hr />
-    </header>
-
-    <main>
-      <h1>Welcome</h1>
-    <!-- Login - later will take a username and password -->
-      <form method="get" action="mypi.html">
-        <label for="name">Username</label>
-        <input type="text" id="name" placeholder="Username" />
-      </form>
-
-      <form method="get" action="mypi.html">
-        <label for="name">Password</label>
-        <input type="text" id="name" placeholder="Password" />
-      </form>
-
-    <!-- This may be a problem later, the button was originally inside the form, if functionality isn't there, change it back -->
-      <button type="submit">Login</button>
-    </main>
-
-    <footer>
-      <hr />
-      <span class="text-reset">Makayla Black</span>
-      <br />
-      <a href="https://github.com/mkaybug/startup.git">GitHub</a>
-    </footer>
-  </body>
+<header>
+  <h1>Broke</h1>
+    <div><a class="menu" href="index.html">Home</a>
+    <a class="menu" href="mypi.html">MyPi</a>
+    <a class="menu" href="expenses.html">Expenses</a>
+    <a class="menu" href="savings.html">Savings Tool</a>
+    <a class="menu" href="about.html">About</a></div>
+</header>
+    
+<main>
+  <div>
+    <h1>Welcome</h1>
+    <form method="get" action="mypi.html">
+          <input type="text" id="username" placeholder="Username" />
+          <input type="text" id="password" placeholder="Password" />
+    </form>
+    <button type="submit">Login</button>
+  </div>
+</main>
+  
+  <footer>
+        <span class="author">Makayla Black</span>
+        <a class="github-link"  href="https://github.com/mkaybug/startup.git">GitHub</a>
+  </footer> 
 </html>
+  

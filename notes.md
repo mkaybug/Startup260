@@ -168,4 +168,5 @@ Right click on webpage and click on "inspect"
 
 ### Syntax
 == Comparison operator, are they equal?
+
 === Comparison operator, are they equal, AND are they the same type?

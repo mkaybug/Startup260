@@ -164,3 +164,4 @@ index.html
 JS can be in the HTML file or referenced in another file. If it's starting to get too long, put it in it's own file.
 
 ### Do most of your debugging in inspect inside of Chrome REALLY POWERFUL!!!
+Right click on webpage and click on "inspect"

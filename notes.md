@@ -165,3 +165,7 @@ JS can be in the HTML file or referenced in another file. If it's starting to ge
 
 ### Do most of your debugging in inspect inside of Chrome REALLY POWERFUL!!!
 Right click on webpage and click on "inspect"
+
+### Syntax
+== Comparison operator, are they equal?
+=== Comparison operator, are they equal, AND are they the same type?

@@ -106,3 +106,7 @@ p {
 
 # JavaScript
 Always set your script at the end of the body. That way your website will render first, so your user can see something, and then the functionality will load in.
+
+Learning JavaScript helps:
+- W3 Tutorials
+- Book: Eloquent JavaScript

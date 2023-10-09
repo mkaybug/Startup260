@@ -121,11 +121,13 @@ Print and concatenation: `console.log('Hello' + ' ' 'world')`
 
 Array and function definition: 
 
-```const words = [;hello', 'world'];
+```
+const words = [;hello', 'world'];
 
 words.forEach((word) => {
 console.log(word);
-});```
+});
+```
 
 You don't have to declare a function before you pass it an argument. We didn't specify the type for the variable "word" so JS will do it's best and take any type.
 
@@ -133,13 +135,16 @@ You don't have to declare a function before you pass it an argument. We didn't s
 
 index.js
 
-```function sayHello() {
+```
+function sayHello() {
   console.log('hello');
-}```
+}
+```
 
 index.html
 
-```<head>
+```
+<head>
   <script src="index.js"></script>
 </head>
 <body>
@@ -153,6 +158,7 @@ index.html
   <button onclick="let i=1; i++; console.log(i)">press me</button>
 </body>
   </script>
-</body>```
+</body>
+```
 
 JS can be in the HTML file or referenced in another file. If it's starting to get too long, put it in it's own file.

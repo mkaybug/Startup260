@@ -25,11 +25,11 @@
     justify-content: space-between;
     align-items: center;
   }
-
+  
   .menu {
     margin-right: 10px;
   }
-
+  
   header h1 {
     font-size: 20px;
     font-style: italic;
@@ -43,18 +43,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #FFFFFF;
-  }
-
-  .income-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 20px;
-  }
-
-  .income-container label {
-    margin-right: 10px;
+    background-color: #A6A6A6
   }
   
   input {

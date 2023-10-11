@@ -1,49 +1,61 @@
-<!-- I've left in some of the comments from the Simon code to help me throughout development -->
-<!DOCTYPE html>
+<!DOCTYPE htm>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Tell browsers not to scale the viewport automatically -->
+<!-- Tells browers not to scale automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Startup HTML</title>
+    <title>Startup CSS</title>
+    
+    <link rel="stylesheet" href="main.css" />
   </head>
 
-  <!-- Completely changed my header (CSS submission) -->
-  <body>
-    <header>
-      <h1>Broke</h1>
-        <div><a class="menu" href="index.html">Home</a>
-        <a class="menu" href="mypi.html">MyPi</a>
-        <a class="menu" href="expenses.html">Expenses</a>
-        <a class="menu" href="savings.html">Savings Tool</a>
-        <a class="menu" href="about.html">About</a></div>
-    </header>
-    
-    <main>
-      <h1>MyPi</h1>
-      <label for="income">Income<br></label>
-      <input type="text" id = "income">
-      <div id="output"></div>
-    <!-- Here's the code for the pie chart -->
-    <!-- At the moment it's just a visual place holder. I want it to be dynamic, so we'll fix it later when we get to CSS and JavaScript -->
-    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-    <table id="myTable">
-      <tr>
-          <th>Category</th>
-          <th>Budget Allotment</th>
-      </tr>
-      <tr>
-          <td>Cateogry1</td>
-          <td>Percentage</td>
-      </tr>
-  </table>
+<!-- Completely changed my header (CSS submission) -->
+  <header>
+    <h1>Broke</h1>
+    <div>
+      <a class="menu" href="index.html">Home</a>
+      <a class="menu" href="mypi.html">MyPi</a>
+      <a class="menu" href="expenses.html">Expenses</a>
+      <a class="menu" href="savings.html">Savings Tool</a>
+      <a class="menu" href="about.html">About</a>
+    </div>
+  </header>
 
-  <form>
-      <input type="text" id="category" placeholder="Category Name" />
-      <input type="text" id="budget" placeholder="Percentage" />
-  </form>
-  <button onclick="addCategory()">Add</button>
-  <button onclick="removeCategory()">Remove</button>
+  <main>
+    <!-- Header and Income entry group -->
+    <div class="income-container">
+      <h1>MyPi</h1>
+      <div id="output">$$$$</div>
+      <form>
+        <label for="income">Income:</label>
+        <input type="text" id="income">
+      </form>
+    </div>
+
+    <!-- Code for the table -->
+    <div>
+      <table id="myTable">
+        <tr>
+            <th>Category</th>
+            <th>Budget Allotment</th>
+        </tr>
+        <tr>
+            <td>Cateogry1</td>
+            <td>Percentage</td>
+        </tr>
+      </table>
+
+      <form>
+          <input type="text" id="category" placeholder="Category Name" />
+          <input type="text" id="budget" placeholder="Percentage" />
+      </form>
+      <button onclick="addCategory()">Add</button>
+      <button onclick="removeCategory()">Remove</button>
+    </div>
+
+    <!-- Here's the code for the pie chart thus far-->
+    <!-- There is some JavaScript going on here -->
+    <div><canvas id="myChart" style="width:100%;max-width:600px"></canvas></div>
   </main>
   
   <footer>
@@ -56,33 +68,31 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
   </script>
 
-<script>
-const xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-const yValues = [55, 49, 44, 24, 15];
-const barColors = [
-"#b91d47",
-"#00aba9",
-"#2b5797",
-"#e8c3b9",
-"#1e7145"
-];
+  <script>
+    const xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+    const yValues = [55, 49, 44, 24, 15];
+    const barColors = [
+      "#b91d47",
+      "#00aba9",
+      "#2b5797",
+      "#e8c3b9",
+      "#1e7145"];
 
-new Chart("myChart", {
-type: "pie",
-data: {
-  labels: xValues,
-  datasets: [{
-    backgroundColor: barColors,
-    data: yValues
-  }]
-},
-options: {
-  title: {
-    display: true,
-    text: "World Wide Wine Production 2018"
-  }
-}
-});
-</script>
-</body>
+  new Chart("myChart", {
+    type: "pie",
+    data: {
+      labels: xValues,
+      datasets: [{
+        backgroundColor: barColors,
+        data: yValues
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: "World Wide Wine Production 2018"
+      }
+    }
+  });
+  </script>
 </html>

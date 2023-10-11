@@ -106,3 +106,67 @@ p {
 
 # JavaScript
 Always set your script at the end of the body. That way your website will render first, so your user can see something, and then the functionality will load in.
+
+Learning JavaScript helps:
+- W3 Tutorials
+- Book: Eloquent JavaScript
+
+JavaScript can be used for front end and back end (node.js is backend, implemented in the browser).
+
+### Code samples:
+
+Strings: `'Hello World';`
+
+Print and concatenation: `console.log('Hello' + ' ' 'world')`
+
+Array and function definition: 
+
+```
+const words = [;hello', 'world'];
+
+words.forEach((word) => {
+console.log(word);
+});
+```
+
+You don't have to declare a function before you pass it an argument. We didn't specify the type for the variable "word" so JS will do it's best and take any type.
+
+**Using an index file with HTML file**
+
+index.js
+
+```
+function sayHello() {
+  console.log('hello');
+}
+```
+
+index.html
+
+```
+<head>
+  <script src="index.js"></script>
+</head>
+<body>
+  <script>
+    function sayGoodbye() {
+      alert('Goodbye');
+    }
+  </script>
+  <button onclick="sayHello()">Say Hello</button>
+  <button onclick="sayGoodbye()">Say Goodbye</button>
+  <button onclick="let i=1; i++; console.log(i)">press me</button>
+</body>
+  </script>
+</body>
+```
+
+JS can be in the HTML file or referenced in another file. If it's starting to get too long, put it in it's own file.
+
+### Do most of your debugging in inspect inside of Chrome REALLY POWERFUL!!!
+Right click on webpage and click on "inspect"
+
+### Syntax
+== Comparison operator, are they equal?
+
+=== Comparison operator, are they equal, AND are they the same type?

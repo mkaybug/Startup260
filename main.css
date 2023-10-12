@@ -17,7 +17,7 @@ body {
 header {
   flex: 0 50px;
   font-size: 20px;
-  background: #008D7D;
+  background: #01A491;
   color: white;
 
   display: flex;
@@ -67,7 +67,7 @@ input::placeholder {
 }
 
 button {
-  background-color: #008D7D;
+  background-color: #01A491;
   padding: 13px;
   border: 1px solid #ccc;
   border-radius: 3px;

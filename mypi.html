@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Startup CSS</title>
     
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="mypi.css" />
   </head>
 
 <!-- Completely changed my header (CSS submission) -->
@@ -25,10 +25,12 @@
     <!-- Header and Income entry group -->
     <div class="income-container">
       <h1>MyPi</h1>
-      <div id="output">$$$$</div>
       <form>
-        <label for="income">Income:</label>
-        <input type="text" id="income">
+        <div class="row">
+          <label for="income">Income:</label>
+          <div id="output">$$$$</div>
+        </div>
+        <input type="text" id="income" placeholder="Edit Income"></input>
       </form>
     </div>
 

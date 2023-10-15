@@ -32,25 +32,26 @@
 
     <div class="table-left-pie-right">
       <div class="input-and-table">
-        <div class="budget">
+        <div>
           <form method="get" action="mypi.html">
             <label for="expense">Budget</label>
             <br>
-            <input class="italics" type="text" id="category-name" placeholder="Rent" />
-            <input class="italics" type="text" id="percentage" placeholder="40%" />
-            <br>
-            <div class="justify-right">
+            <div>
+              <input class="italics" type="text" id="category-name" placeholder="Rent" />
+              <input class="italics" type="text" id="percentage" placeholder="40%" />
               <button onclick="addCategory()">Add</button>
             </div>
-          </form>
+            </form>
         </div>
 
         <div>
-          <table id="myTable">
+          <table id="category-table">
             <tr>
               <th id="category-color-header"></th>
               <th>Category</th>
-              <th>Budget Allotment</th>
+              <th>Budget</th>
+              <th>Available</th>
+              <th>Total</th>
             </tr>
             <tr>
               <td class="color-box" id="category-color"></td>
@@ -61,12 +62,12 @@
             </tr>
           </table>
         </div>
-      </div>
+      </div> <!-- Missing closing div for .income-container -->
 
-      <div class="pie-chart-container">
-        <canvas id="myChart" style="max-width: 600px"></canvas>
-      </div>
-    </div>
+      <div class="pie-chart-container"> <!-- Opening div for the pie chart -->
+        <canvas id="myChart"></canvas>
+      </div> <!-- Missing closing div for the pie chart -->
+    </div> <!-- Missing closing div for the main content -->
 
 <div class="income-container">
   <h1>Expenses</h1>
@@ -91,7 +92,7 @@
   </form>
 </div>
 
-<table id="my-table">
+<table id="expense-table">
   <tr>
     <th id="category-color-header"></th>
     <th>Expense</th>
@@ -115,34 +116,28 @@
   <a class="github-link"  href="https://github.com/mkaybug/startup.git">GitHub</a>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
 <script>
-  const xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-  const yValues = [55, 49, 44, 24, 15];
+  const xValues = ["Fun", "Groceries", "Car/Gas", "Rent"];
+  const yValues = [10, 25, 25, 40];
   const barColors = [
-    "#b91d47",
-    "#00aba9",
-    "#2b5797",
-    "#e8c3b9",
-    "#1e7145"];
+    "#EBC239",  //Yellow  (I'm considering putting the chart colors in a set order
+    "#1986CF",  //Blue     - largest section is always red for example)
+    "#01A491",  //Teal
+    "#FF5757",  //Red
+    
+  ];
 
-new Chart("myChart", {
-  type: "pie",
-  data: {
-    labels: xValues,
-    datasets: [{
-      backgroundColor: barColors,
-      data: yValues
-    }]
-  },
-  options: {
-    title: {
-      display: true,
-      text: "World Wide Wine Production 2018"
-    }
-  }
-});
+  new Chart("myChart", {
+    type: "pie",
+    data: {
+      labels: xValues,
+      datasets: [{
+        backgroundColor: barColors,
+        data: yValues
+      }]
+    },
+  });
 </script>
 </html>

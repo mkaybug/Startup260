@@ -5,45 +5,50 @@ It will also display the programs calculations on the user's progress towards th
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
+    <!-- Tells browers not to scale automatically -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Startup HTML</title>
-    </head>
-    <body>
-        <header>
-            <h1>Budgeting Tool</h1>
-            <nav>
-                <menu>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="mypi.html">Budget</a></li>
-                    <li><a href="expenses.html">Expenses</a></li>
-                    <li><a href="savings.html">Savings Tool</a></li>
-                    <li><a href="about.html">About</a></li>
-                </menu>
-            </nav>
-
-            <hr />
-        </header>
+        <title>Startup CSS</title>
+        
+        <link rel="stylesheet" href="savings.css" />
+      </head>
+    
+    <!-- Completely changed my header (CSS submission) -->
+    <header>
+      <h1>Broke</h1>
+      <div>
+        <a class="menu" href="index.html">Home</a>
+        <a class="menu" href="mypi.html">Budget</a>
+        <a class="menu" href="savings.html">Savings Tool</a>
+        <a class="menu" href="about.html">About</a>
+      </div>
+    </header>
 
         <main>
             <h1>Savings Tool</h1>
-            <h3>Your Goal:</h3>
+            <h2>
+                <div class="row">
+                    <label for="income">Your Goal:</label>
+                    <div id="output">$$$$</div>
+                </div></h2>
             <div id="savingsgoal"></div>
       
-            <form>
-                <input type="text" id="goal" placeholder="Amount" />
-                <input type="text" id="time" placeholder="Time (optional)" />
-            </form>
-            <button type="submit">Create New Goal</button>
+            <div class="income-container">
+                <form method="get" action="mypi.html">
+                    <input class="italics" type="text" id="goal" placeholder="Amount" />
+                    <input class="italics" type="text" id="time" placeholder="Time (optional)" />
+                    <button onclick="createNewGoal()" type="submit">Create New Goal</button>
+                </form>
+            </div>
 
-            <h3>Progress:</h3>
+            <!-- I want the progress portion to have a progress bar eventually, but I think
+            I need JS to implement it, so I'm holding off -->
+            <h2>Progress:</h2>
             <div id="progress"></div>
         </main>
 
         <footer>
-            <hr />
-            <span class="text-reset">Makayla Black</span>
-            <br />
-            <a href="https://github.com/mkaybug/startup.git">GitHub</a>
-          </footer>
+            <span class="author">Makayla Black</span>
+            <a class="github-link"  href="https://github.com/mkaybug/startup.git">GitHub</a>
+        </footer>
     </body>
 </html>

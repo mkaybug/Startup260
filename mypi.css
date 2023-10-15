@@ -56,10 +56,6 @@
     font-size: 40px;
   }
   
-  main h2 {
-    margin-top: 10px;
-    font-size: 20px;
-  }
   .income-container {
     display: flex;
     justify-content: space-between;
@@ -122,10 +118,6 @@
   
   .italics {
     font-style: italic;
-  }
-
-  form button {
-    float: right; /* Align the button to the right */
   }
   
   #category-table {

@@ -105,6 +105,7 @@ p {
 ```
 
 # JavaScript
+*Here is a step through tutorial for JavaScript: https://htmlpreview.github.io/?https://github.com/webprogramming260/.github/blob/main/profile/javascript/introduction/jsDemo.html*
 Always set your script at the end of the body. That way your website will render first, so your user can see something, and then the functionality will load in.
 
 Learning JavaScript helps:
@@ -164,9 +165,15 @@ index.html
 JS can be in the HTML file or referenced in another file. If it's starting to get too long, put it in it's own file.
 
 ### Do most of your debugging in inspect inside of Chrome REALLY POWERFUL!!!
-Right click on webpage and click on "inspect"
 
 ### Syntax
 == Comparison operator, are they equal?
 
 === Comparison operator, are they equal, AND are they the same type?
+
+### Template Literals
+*You can insert code that executes and returns right in your string!*
+```
+`Template ${'lite' + 'rals'}! ${hello(name)}`);
+```
+Right click on webpage and click on "inspect"

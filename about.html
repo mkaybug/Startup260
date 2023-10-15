@@ -5,41 +5,37 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Startup HTML</title>
-    </head>
+        <!-- Tells browers not to scale automatically -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Startup CSS</title>
+    
+    <link rel="stylesheet" href="about.css" />
+  </head>
 
-    <body>
-        <header>
-            <h1>Budgeting Tool</h1>
-            <nav>
-                <menu>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="mypi.html">Budget</a></li>
-                    <li><a href="expenses.html">Expenses</a></li>
-                    <li><a href="savings.html">Savings Tool</a></li>
-                    <li><a href="about.html">About</a></li>
-                </menu>
-            </nav>
-            <hr />
-        </header>
+    <!-- Completely changed my header (CSS submission) -->
+    <header>
+    <h1>Broke</h1>
+    <div>
+        <a class="menu" href="index.html">Home</a>
+        <a class="menu" href="mypi.html">Budget</a>
+        <a class="menu" href="savings.html">Savings Tool</a>
+        <a class="menu" href="about.html">About</a>
+    </div>
+    </header>
 
-        <main>
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.sVur5r_6M57KLNwo_MkBsgHaEx%26pid%3DApi&f=1&ipt=f8a4fe82dd0e50a46ca74c7dfdeacf076d90608e5e6764062d56fac6b35e0215&ipo=images" 
-                 alt="White Mustang">
-            <h1>About</h1>
-            <p>This is a budgeting tool with a working title. MyPi allows the user to
-              enter expense categories and allot budget to those expenses. The 
-              Expenses tab allows users to enter and track expenses. Savings Tool
-              can be used by users to enter and track a savings goal.
-            </p>
-        </main>
+    <main>
+        <h1>About</h1>
+        <p>This is a budgeting tool with a working title. You'll notice 
+            I've combined the "MyPi" and "Expenses" tabs into the "Budget" tab.
+            Now the budget can be edited and expenses added all on the same page. 
+            Savings tool tracks the users progress to a financial goal and the goal
+            can be updated anytime.
+        </p>
+    </main>
 
-        <footer>
-            <hr />
-            <span class="text-reset">Makayla Black</span>
-            <br />
-            <a href="https://github.com/mkaybug/startup.git">GitHub</a>
-          </footer>
+    <footer>
+        <span class="author">Makayla Black</span>
+        <a class="github-link"  href="https://github.com/mkaybug/startup.git">GitHub</a>
+      </footer>
     </body>
 </html>

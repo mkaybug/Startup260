@@ -16,7 +16,7 @@
   
   header {
     flex: 0 50px;
-    font-size: 20px;
+    font-size: 18px;
     background: #01A491;
     color: white;
   
@@ -128,7 +128,6 @@
     float: right; /* Align the button to the right */
   }
   
-
   #category-table {
     font-size: 18px;
     margin-top: 50px;

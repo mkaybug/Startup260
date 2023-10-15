@@ -51,11 +51,36 @@
     background-color: #FFFFFF;
   }
 
+  main h1 {
+    font-size: 40px;
+  }
+  
+  main h2 {
+    margin-top: 10px;
+    font-size: 20px;
+  }
   .income-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-right: 20px;
+  }
+
+  .table-left-pie-right {
+    display: flex;
+  }
+
+  .input-and-table {
+    flex: 1;
+    margin-right: 20px;
+  }
+
+  .pie-chart-container {
+    max-width: 600px;
+  }
+
+  #myChart {
+    max-width: 100%; /* Responsive width for the chart */
   }
 
   .row {
@@ -70,9 +95,9 @@
     margin-right: 10px;
   }
   
-  input {
+  input, select {
     background-color: #FFFFFF;
-    padding: 5px;
+    padding: 13px;
     border: 1px solid #ccc;
     border-radius: 3px;
     width: 210px;
@@ -80,27 +105,77 @@
     
     margin-bottom: 10px;
     margin-top: 5px;
-    display: block;
     margin-left: auto;
     margin-right: auto;
   }
   
-  input::placeholder {
-    color: #545454;
+  .add-expense {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  .italics {
     font-style: italic;
+  }
+
+  form button {
+    float: right; /* Align the button to the right */
+  }
+  
+  /* form::after {
+    content: "";
+    display: table;
+    clear: both;
+  } */
+
+  table {
+    font-size: 20px;
+    margin: 0 auto;
+    width: 75%;
+
+    border-collapse: collapse;
+  }
+
+  th {
+    text-align: left;
+  }
+
+  td {
+    border: 1px solid;
+    border-color: #545454;
+    padding: 12px;
+  }
+
+  .color-box {
+    width: 2px;
+    background-color: #FF5757;
+  }
+
+  .button-box {
+    border: none;
+    height: 0;
+    width: 0;
+  }
+
+  #edit-icon {
+    width: 20px;
+    height: 20px;
   }
   
   button {
-    background-color: #008D7D;
-    padding: 13px;
+    color: #FFFFFF;
+    background-color: #01A491;
+    padding: 11px;
     border: 1px solid #ccc;
     border-radius: 3px;
-    width: 210px;
+    width: 80px;
     text-align: center;
-    
+  
     margin-bottom: 10px;
     margin-top: 10px;
-    display: block;
     margin-left: auto;
     margin-right: auto;
   }

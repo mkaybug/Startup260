@@ -1,60 +1,79 @@
-<!DOCTYPE html>
+<!DOCTYPE htm>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+<!-- Tells browers not to scale automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Startup HTML</title>
+    <title>Startup CSS</title>
+    
+    <link rel="stylesheet" href="expenses.css" />
   </head>
-  <body>
-    <header>
-      <h1>Budgeting Tool</h1>
-      <nav>
-        <menu>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="mypi.html">Budget</a></li>
-          <li><a href="expenses.html">Expenses</a></li>
-          <li><a href="savings.html">Savings Tool</a></li>
-          <li><a href="about.html">About</a></li>
-        </menu>
-      </nav>
-      <hr />
-    </header>
+
+<!-- Completely changed my header (CSS submission) -->
+<header>
+  <h1>Broke</h1>
+  <div>
+    <a class="menu" href="index.html">Home</a>
+    <a class="menu" href="mypi.html">MyPi</a>
+    <a class="menu" href="expenses.html">Expenses</a>
+    <a class="menu" href="savings.html">Savings Tool</a>
+    <a class="menu" href="about.html">About</a>
+  </div>
+</header>
     
     <main>
       <!-- This page works much the same as the MiPi page. A user can enter in a new expense, remove an old one
       The application will also calculate the remaining income I user has to work with and display it here -->
-      <h1>Expenses</h1>
-      <h3>Remaining Income:</h3>
-      <div id="remaining"></div>
+      <div class="income-container">
+        <h1>Expenses</h1>
+        <form>
+          <div class="row, italics">
+            <label for="income">Available Income:</label>
+            <div id="remaining">$$$$</div>
+          </div>
+        </form>
+      </div>
+
+      <div class="add-expense">
+        <form method="get" action="expenses.html">
+          <label for="expense">New Expense</label>
+          <br>
+          <input class="italics" type="text" id="expense" placeholder="Expense" />
+          <input class="italics" type="text" id="amount" placeholder="Amount" />
+          <select id="expense-category" name="category">
+            <option class="italics" value="" disabled selected>Select Category</option>
+            <option value="rent">Rent</option>
+            <option value="fun">Fun</option>
+            <option value="groceries">Groceries</option>
+          </select>
+          <br>
+          <div class="justify-right">
+            <button onclick="addRow()">Add</button>
+          </div>
+        </form>
+      </div>
       
-      <form>
-        <input type="text" id="Category" placeholder="Category" />
-        <input type="text" id="description" placeholder="Description" />
-        <input type="text" id="amount" placeholder="Amount" />
-        
-    </form>
-    <button onclick="addRow()">Add Expense</button>
-    <button onclick="removeRow()">Remove Expense</button>
-      
-      <table id="myTable">
+      <table id="my-table">
         <tr>
-            <th>Category</th>
-            <th>Description</th>
-            <th>Amount</th>
+          <th id="category-color-header"></th>
+          <th>Expense</th>
+          <th>Amount</th>
         </tr>
         <tr>
-            <td>Category1</td>
-            <td>Description1</td>
-            <td>Amount1</td>
+          <td class="color-box" id="category-color"></td>
+          <td editabletable="true">Row 1, Cell 1</td>
+          <td editabletable="true">Row 1, Cell 2</td>
+          <td class="button-box">
+            <a class="edit-icon" onclick="editRow()">
+              <img src="favicon.ico" id="edit-icon">
+            </a>
+          </td>
         </tr>
-    </table>
+      </table>
     </main>
     
     <footer>
-      <hr />
-      <span class="text-reset">Makayla Black</span>
-      <br />
-      <a href="https://github.com/mkaybug/startup.git">GitHub</a>
+      <span class="author">Makayla Black</span>
+      <a class="github-link"  href="https://github.com/mkaybug/startup.git">GitHub</a>
     </footer>
-  </body>
 </html>

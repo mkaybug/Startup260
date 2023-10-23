@@ -249,4 +249,4 @@ Right click on webpage and click on "inspect"
    
 34. What will the following code using Promises output when executed?
 
-> Call this function after three seconds
+> Constant that calls a function. Takes two parametersand uses arrow syntax. Call this function after three seconds. Do you think he used the same example from the slides? Paste that example in.

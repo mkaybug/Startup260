@@ -239,7 +239,7 @@ Right click on webpage and click on "inspect"
    
 30. Which of the following is true for the domain name banana.fruit.bozo.click, which is the top level domain, which is a subdomain, which is a root domain?
   
->Browser talks to server. HTTPS ensures that we don't talk to the middle man who can steal   information. We talk to the server first because we want to know that the serve is legit, and then the server sends a certificate back. We can use that certificate to create an encryption key that can be used the rest of the session to secure data sent back and forth between browser and server.
+> Browser talks to server. HTTPS ensures that we don't talk to the middle man who can steal   information. We talk to the server first because we want to know that the serve is legit, and then the server sends a certificate back. We can use that certificate to create an encryption key that can be used the rest of the session to secure data sent back and forth between browser and server.
    
 31. Is a web certificate is necessary to use HTTPS.
    
@@ -248,3 +248,5 @@ Right click on webpage and click on "inspect"
 33. Port 443, 80, 22 is reserved for which protocol?
    
 34. What will the following code using Promises output when executed?
+
+> Call this function after three seconds

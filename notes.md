@@ -181,27 +181,64 @@ Right click on webpage and click on "inspect"
 # Midterm Study Guide
 1. In the following code, what does the link element do?
 
+> The <link> element is used to define relationships between a document and an external source. ie. bootstrap style sheets into an HTML file.
+
 2. In the following code,  what does a div tag do?
+
+> The <div> tag is used for grouping and organizing other HTML elements. It can be used to wrap multiple elements such as headings, paragraphs, images, and other HTML elements togehter. This is useful for applying common styling, layout, or behavior to a group of elements.
 
 3. In the following code, what is the difference between the #title and .grid selector?
 
+> #title -> example of an ID selector in CSS. Used to select an HTML element with a specific 'id' attribute. ID selectors are unique to one element on the page with specified 'id'. Used to apply specific stying or behavior to one element.
+> .grid -> example of a class selector in CSS. Used to select HTML elements with specific 'class' attribute.
+
 4. In the following code, what is the difference between padding and margin?
 
+> Padding is the space inside an element, between the element's content and its border. Margins are the space outside an element, between the element's border and neighboring elements. 
+
 5. Given this HTML and this CSS how will the images be displayed using flex?
+
+> To use flexbox, you start by creating a flex container, which is an element that you want to lay out using the flexbox model. This can be any block-level or inline-block element.
+> Main Axis and Cross Axis: In a flex container, there are two axes: the main axis and the cross axis. The main axis is determined by the 'flex-direction' property, which can be set to either "row" (default) or "column" to create a horizontal or vertical ayout, respectively.
+> To control the layout of flex items, you can use various flex properties, such as 'flex-grow', 'flex-shrink', and 'flex-basis', to define how the space is distributed among the items.
   
 6.  What does the following padding CSS do?
+
+> Padding creates space inside an element, surrounding the content.
    
 7. What does the following code using arrow syntax function declaration do?
+
+> 
     
 8. What does the following code using map with an array output?
+
+>
     
 9. What does the following code output using getElementByID and addEventListener?
+
+> 
     
 10. What does the following line of Javascript do using a # selector?
+
+> 
     
 11. Which of the following are true? (mark all that are true about the DOM)
-    
+
+> The Document Object Model is an object representation of the HTML elements that the browser uses to render the display. The browser also exposes the DOM to external code so that you can write programs that dynamically manipulate the HTML.
+> The browser provides access tot he DOM through a global variable name `document` that points to the root element of the DOM. If you open the browser's debugger console window and type the variable name `document` you will see the DOM for the document the browser is currently rendering.
+> For everything in an HTML document there is a node in the DOM. This includes elements, attributes, text, comments, and whitespace. All of these nodes form a big tree, with the document node at the top.
+> Every element in an HTML document implements the DOM Element interface, which is derived from the DOM Node interface. The DOM Element Interface provides the means for iterating child elements, accessing the parent element, and manipuating the element's attributes. From your JavaScript code, you can start with the `document` variable and walk through the every element in the tree.
+> You can provide a CSS selector to the `querySelectorAll` function in order to select elements from the document. The `textContent` property contains all of the element's text. You can even access a textual representation of an element's HTML content witht he `innerHTML` property.
+> Modifying the DOM -> The DOM supports the ability to insert, modify, or delete the elements in the DOM. To create a new element you first create the element on the DOM document. You then insert the new element into the DOM tree by appending it to an existing element in the tree.
+> To delete elements call the `removeChild` function on the parent element.
+> The DOM also allows you to inject entire blocks of HTML into an element. The following code finds the first div element in the DOM and replaces all the HTML it contains.
+> However, directly injecting HTML as a block of text is a common attack vector for hackers. If an untrusted party can inject JavaScript anywhere in your application then that JavaScript can represent itself as the current user of the application. The attacker can then make requests for sensitive data, moniter activity, and steal credentials.
+> Common injection paths include HTML input controls, URL parameters, and HTTP headers. Either sanitize any HTML that contains variables, or simply use DOM manipulation functions instead of using `innerHTML`.
+> Event Listeners -> All DOM elements support the ability to attach a function that gets called when an event occurs on the element -> event listeners. 
+
 12. By default, the HTML span element has a default CSS display property value of:
+
+> DOM (Document Object Model) 
    
 13. How would you use CSS to change all the div elements to have a background color of red?
    

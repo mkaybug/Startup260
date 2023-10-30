@@ -208,11 +208,11 @@ Right click on webpage and click on "inspect"
    
 7. What does the following code using arrow syntax function declaration do?
 
-> 
+> `() => 3;` A function that takes no parameters and always returns 3.
     
 8. What does the following code using map with an array output?
 
->
+> 
     
 9. What does the following code output using getElementByID and addEventListener?
 
@@ -225,65 +225,291 @@ Right click on webpage and click on "inspect"
 11. Which of the following are true? (mark all that are true about the DOM)
 
 > The Document Object Model is an object representation of the HTML elements that the browser uses to render the display. The browser also exposes the DOM to external code so that you can write programs that dynamically manipulate the HTML.
+> 
 > The browser provides access tot he DOM through a global variable name `document` that points to the root element of the DOM. If you open the browser's debugger console window and type the variable name `document` you will see the DOM for the document the browser is currently rendering.
+> 
 > For everything in an HTML document there is a node in the DOM. This includes elements, attributes, text, comments, and whitespace. All of these nodes form a big tree, with the document node at the top.
+> 
 > Every element in an HTML document implements the DOM Element interface, which is derived from the DOM Node interface. The DOM Element Interface provides the means for iterating child elements, accessing the parent element, and manipuating the element's attributes. From your JavaScript code, you can start with the `document` variable and walk through the every element in the tree.
+> 
 > You can provide a CSS selector to the `querySelectorAll` function in order to select elements from the document. The `textContent` property contains all of the element's text. You can even access a textual representation of an element's HTML content witht he `innerHTML` property.
+> 
 > Modifying the DOM -> The DOM supports the ability to insert, modify, or delete the elements in the DOM. To create a new element you first create the element on the DOM document. You then insert the new element into the DOM tree by appending it to an existing element in the tree.
+> 
 > To delete elements call the `removeChild` function on the parent element.
+> 
 > The DOM also allows you to inject entire blocks of HTML into an element. The following code finds the first div element in the DOM and replaces all the HTML it contains.
+> 
 > However, directly injecting HTML as a block of text is a common attack vector for hackers. If an untrusted party can inject JavaScript anywhere in your application then that JavaScript can represent itself as the current user of the application. The attacker can then make requests for sensitive data, moniter activity, and steal credentials.
+> 
 > Common injection paths include HTML input controls, URL parameters, and HTTP headers. Either sanitize any HTML that contains variables, or simply use DOM manipulation functions instead of using `innerHTML`.
+> 
 > Event Listeners -> All DOM elements support the ability to attach a function that gets called when an event occurs on the element -> event listeners. 
 
 12. By default, the HTML span element has a default CSS display property value of:
 
-> DOM (Document Object Model) 
+> `inline` This means that the <span> element is treated as an inline-level element and it does not start a new line. It flows with the text or content alongside other inline elements.
    
 13. How would you use CSS to change all the div elements to have a background color of red?
+
+> What is the outermost `div` element? Set the background color of that one to red. Or, if you wanted all the `div` elements in a document to have a red background color, you could do this:
+> ```
+> div {
+>   background color: red;
+> }
+> ```
    
 14. How would you display an image with a hyperlink in HTML?
+
+>```
+> <a href="https://www.example.com">
+>    <img src="example-image.jpg" alt="Example Image">
+> </a>
+>```
    
 15. In the CSS box model, what is the ordering of the box layers starting at the inside and working out?
+
+> 1. Content: The actual content of the element, such as text, images, or other media.
+> 2. Padding: Space between the content and the elements border.
+> 3. Border: A visible or invisible boundary around the padding and content. You can set the border's style, color, and width.
+> 4. Margin: Space outsidet he border. Space between element and other elements in the layout.
+> ![Alt Text](https://www.simplilearn.com/ice9/free_resources_article_thumb/CSS-Box-Model.png)
    
 16. Given the following HTML, what CSS would you use to set the text "troubl" to green and leave the "double" text unaffected?
+
+> You can use specific ids
+> ```
+> #troubl {
+>   color: green;
+> }
+> ```
+> Or classes
+> ```
+> .troubl {
+>   color: green;
+> }
+> ```
    
 17. What will the following code output when executed using a for loop and console.log?
    
 18. How would you use JavaScript to select an element with the id of “byu” and change the text color of that element to green?
+
+> ```
+> let element = document.getElementById("byu");
+> element.style.color = "green";
+> ```
    
 19. What is the opening HTML tag for a paragraph, ordered list, unordered list, second level heading, first level heading, third level heading?
+
+> Paragraph: `<p>`
+>
+> Ordered List: `<ol>`
+>
+> Unordered List: `<ul>`
+>
+> Second level heading: `<h2>`
+>
+> First level heading: `<h1>`
+>
+> Third level heading: `<h3>`
    
 20. How do you declare the document type to be html?
+
+> ```
+> <!DOCTYPE html>
+> <html lang="en">
+> </html>
+> ```
    
 21. What is valid javascript syntax for if, else, for, while, switch statements?
+
+>If Else:
+>  ```
+> if (a === 1) {
+>   //...
+> }
+> else {
+>   //...
+> }
+> ```
+>
+> Ternary operator: `a === 1 ? console.log(1) : console.log('not 1');`
+>
+> For Loop:
+> ```
+> for (let i = 0; i < 2; i++) {
+>   console.log(i)
+> }
+> ```
+>
+> Do While Loop:
+> ```
+> let i = 0;
+> do {
+>   console.log(i);
+>   i++;
+> } while (i < 2);
+> ```
+>
+> For in (iterates over an object's property names):
+> ```
+> const obj = { a: 1, b: 'fish' };
+> for (const name in obj) {
+>   console.log(name);
+> }
+> // OUTPUT: a
+> // OUTPUT: b
+> ```
+>
+> For of (iterates over an iterable's (Array, Map, Set, ...) property values):
+> ```
+> const arr = ['a', 'b'];
+> for (const val of arr) {
+>   console.log(val);
+> }
+> // OUTPUT: 'a'
+> // OUTPUT: 'b'
+> ```
+>
+> Break and continue: `continute;` `break;`
+>
+> Switch Statement:
+> ```
+> switch (day) {
+>   case 0:
+>     dayName = "Sunday";
+>     break;
+>   case 1:
+>     dayName = "Monday";
+>     break;
+>   case 2:
+>     dayName = "Tuesday";
+>     break;
+>   case 3:
+>     dayName = "Wednesday";
+>     break;
+>   case 4:
+>     dayName = "Thursday";
+>     break;
+>   case 5:
+>     dayName = "Friday";
+>     break;
+>   case 6:
+>     dayName = "Saturday";
+>     break;
+>   default:
+>     dayName = "Invalid day"; // Default case, in case the day value is not 0-6
+>   }
+> ```
    
 22. What is the correct syntax for creating a javascript object?
-   
+
+> ```
+> const obj = new Object({a:3});
+> obj['b'] = 'fish';
+> obj.c = [1, 2, 3];
+> obj.hello = function () {
+>   console.log('hello');
+> };
+> 
+>
+> console.log(obj);
+> // OUTPUT: {a: 3, b: 'fish', c: [1,2,3], hello: func}
+> ```
+>
+> ```
+> const obj = {
+>   a: 3,
+>   b: 'fish',
+> };
+> ```
+
 23. Is is possible to add new properties to javascript objects?
+
+> Yep! Once declared you can add properties to the object by simply referencing the property name in an assignment.
    
 24. If you want to include JavaScript on an HTML page, which tag do you use?
+
+> `<script>`
    
 25. Given the following HTML, what JavaScript could you use to set the text "animal" to "crow" and leave the "fish" text unaffected?
+
+> 
    
 26. Which of the following correctly describes JSON?
+
+> JSON "JavaScript Object Notation", provides a simple, and yet effective way, to share and store data. By design JSON is easily convertible to, and from, JavaScript objects. This makes it a very convenient data format when working with web technologies. Because of its simplicity, standardization, and compatibility with JavaScript, JSON has become one of the world's most popular data formats.
+> 
+> JSON is a lightweight data interchange format that is easy for humans to read and write and easy for machines to parse and generate. JSON is often used to transmit data between a server and a web application as an alternative to XML.
    
 27. What does the console command chmod, pwd, cd, ls, vim, nano, mkdir, mv, rm, man, ssh, ps, wget, sudo  do?
+
+> `chmod`: "Change mode", used to change the permissions of files and directories. Allows you to control who can read, write, or execute a file or directory.
+>
+>  `pwd`: "Print working directory", shows you the full path to the directory you are currently in.
+>
+>  `cd`: "Change directory", changes the current directory.
+>
+>  `ls`: "list", lists the files and subdirectories in a current directory.
+>
+>  `vim`: launch the Vim editor.
+>
+>  `nano`: launch the Nano text editor.
+>
+>  `mkdir`: creates a new directory (folder).
+>
+>  `mv`: "move", allows you to change the location of a file or directory in the file system or to give a file or directory a new name.
+>
+>  `rm`: "remove", delete files and, with appropriate flags, entire directories and their contents.
+>
+>  `man`: "manuel", displays the manuel pages for various commands, programs, and system functions.
+>
+>  `ssh`: "secure shell", used to establish secure remote connections to another computer or server over a network. Provides encrypted communication for secure access to remote systems. Commonly used to log into remote servers, execute commands on remote machines, and securely transfer files between systems.
+> 
+> `ps`: "process status", provides a list of currently running processes on the system, along with their details
+> 
+> `wget`: "web get", retrieves files from the web using the HTTP, HTTPS, FTP, and FTPS protocols. Versatile and powerful tool for downloading files from the internet or local network.
+> 
+> `sudo`: "superuser do", used to execute a command with superuser or administrative privileges. Allows authorized users to perform tasks or run commands that require elevated privileges, such as system administration tasks, without needing to log in as the system's superuser (often called "root").
    
 28. Which of the following console command creates a remote shell session?
+
+> `ssh` "Secure Shell", `telnet`, or `rsh` "Remote Shell"
    
 29. Which of the following is true when the -la parameter is specified for the ls console command?
+
+> `ls -la` is used to list all files and directories including hidden files in a directory.
    
 30. Which of the following is true for the domain name banana.fruit.bozo.click, which is the top level domain, which is a subdomain, which is a root domain?
   
 > Browser talks to server. HTTPS ensures that we don't talk to the middle man who can steal   information. We talk to the server first because we want to know that the serve is legit, and then the server sends a certificate back. We can use that certificate to create an encryption key that can be used the rest of the session to secure data sent back and forth between browser and server.
    
-31. Is a web certificate is necessary to use HTTPS.
+31. When is a web certificate necessary to use HTTPS.
+
+> Security.
+> ![Alt Text](https://raw.githubusercontent.com/webprogramming260/.github/main/profile/webServers/https/letsencryptCertIssue.jpg)
    
-32. Can a DNS A record can point to an IP address or another A record.
+32. Can a DNS A record point to an IP address or another A record.
+
+> No, A records are used to map a domain name to an IPv4 address.
    
 33. Port 443, 80, 22 is reserved for which protocol?
+
+> 443: HTTPS (Hypertext Transfer Protocol Secure), used for encrypting web communications to ensure the confidentiality and integrity of data exchanged between a web server and client (e.g. a web browser). HTTPS is widely used to secure online transactions, login pages, and any web applications that require data privacy.
+> 80: HTTP (Hypertext Transfer Protocol), standard port for regular, unencrypted web traffic using HTTP. Used for non-secure web communications.
+> 22: Used for ssh, which is a secure protocol for remote login and secure command execution on remote servers.
    
 34. What will the following code using Promises output when executed?
 
-> Constant that calls a function. Takes two parametersand uses arrow syntax. Call this function after three seconds. Do you think he used the same example from the slides? Paste that example in.
+> ```
+> const delayedFunction = (param1, param2) => {
+>   return new Promise((resolve, reject) => {
+>     setTimeout(() => {
+>       const constantValue = 'Hello, World!'; // Replace with the desired constant value
+>       resolve(constantValue);
+>     }, 3000);
+>   });
+> };
+> ```
+
+> Constant that calls a function. Takes two parametersand uses arrow syntax. `()=> 3;` (A function in arrow syntax that takes no parameters and always returns 3.) Call this function after three seconds. Do you think he used the same example from the slides? Paste that example in.

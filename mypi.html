@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="mypi.css" />
   </head>
 
+  <!-- Header is the same for every file, I changed this from a menu list in my HTML submission -->
   <header>
     <h1>Broke</h1>
     <div>
@@ -18,37 +19,39 @@
   </header>
 
   <main>
-    <div class="income-container">
-      <h1>MyPi</h1>
-      <form>
-        <div class="row">
-          <label for="income">Income:</label>
-          <div id="output">$$$$</div>
-        </div>
-        <input type="text" id="income" placeholder="Edit Income" />
-      </form>
-    </div>
+    <div>
+      <div class="align-left-space-between">
+        <h1>MyPi</h1>
+        <form id=>
+          <div class="row">
+            <label for="income">Income:</label>
+            <div id="output"></div>
+          </div>
+          <input type="text" id="income" placeholder="Edit Income" />
+        </form>
+      </div>
 
-    <div class="table-left-pie-right">
-      <div class="input-and-table">
-        <div>
-          <form method="get" action="mypi.html">
-            <label for="expense">Budget</label>
-            <br>
-            <input class="italics" type="text" id="category-name" placeholder="Rent" />
-            <input class="italics" type="text" id="percentage" placeholder="40%" />
-            <button onclick="addCategory()">Add</button>
-          </form>
-        </div>
+      <!-- User input fields for new budget categories and their percentages -->
+      <div class="align-left">
+        <div class="group-two-items">
+          <div>
+            <h2>Budget</h2>
+            <input class="italics" type="text" name="category-name" id="category-name" placeholder="Rent" />
+            <input class="italics" type="text" name="percentage" id="percentage" placeholder="Budget percentage i.e. 40" />
+            <button id="add-category" onclick="addBudgetCategory();">Add</button>
+          </div>
 
-        <div>
+          <!-- Table for displaying all budget categories, alloted percentage, available funds, and total funds -->
           <table id="category-table">
             <tr>
               <th id="category-color-header"></th>
-              <th>Category</th>
-              <th>Budget</th>
-              <th>Available</th>
-              <th>Total</th>
+              <th>Time</th>
+              <th>Date of Search</th>
+              <th>Name of Person Researched</th>
+              <th>Search Goal</th>
+              <th>Search Location (Website)</th>
+              <th>Source Citation</th>
+              <th>Results</th>
             </tr>
             <tr>
               <td class="color-box" id="category-color"></td>
@@ -56,63 +59,84 @@
               <td>Budget</td>
               <td>Left</td>
               <td>Total</td>
+              <td class="edit-button-box">
+                <a class="edit-icon" onclick="editRow()">
+                  <img src="favicon.ico" id="edit-icon">
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td class="color-box" id="category-color"></td>
+              <td>Category</td>
+              <td>Budget</td>
+              <td>Left</td>
+              <td>Total</td>
+              <td class="edit-button-box">
+                <a class="edit-icon" onclick="editRow()">
+                  <img src="favicon.ico" id="edit-icon">
+                </a>
+              </td>
             </tr>
           </table>
         </div>
-      </div> <!-- Missing closing div for .income-container -->
 
-      <div class="pie-chart-container"> <!-- Opening div for the pie chart -->
-        <canvas id="myChart"></canvas>
-      </div> <!-- Missing closing div for the pie chart -->
-    </div> <!-- Missing closing div for the main content -->
+        <!-- The following line is for including the pie chart, I haven't decided whether to include it yet or not -->
+        <!-- <canvas class="pie-chart-container" id="myChart"></canvas> -->
+      </div>
+    </div>
 
-<div class="income-container">
-  <h1>Expenses</h1>
-</div>
-
-<div class="add-expense">
-  <form method="get" action="expenses.html">
-    <label for="expense">New Expense</label>
-    <br>
-    <input class="italics" type="text" id="expense" placeholder="Expense" />
-    <input class="italics" type="text" id="amount" placeholder="Amount" />
-    <select id="expense-category" name="category">
+  <!-- Input fields for adding new expenses -->
+  <div class="flex-center-column">
+    <div>
+      <h2>New Entry</h2>
+      <input class="italics" type="text" name="category-name" id="category-name" placeholder="Rent" />
+      <input class="italics" type="text" name="percentage" id="percentage" placeholder="Budget percentage i.e. 40" />
+      <button id="add-category" onclick="addBudgetCategory();">Add</button>
+    </div>
+    <!-- <select id="expense-category" name="category">
       <option class="italics" value="" disabled selected>Select Category</option>
       <option value="rent">Rent</option>
       <option value="fun">Fun</option>
       <option value="groceries">Groceries</option>
-    </select>
-    <br>
-    <div class="justify-right">
-      <button onclick="addRow()">Add</button>
-    </div>
-  </form>
-</div>
+    </select> -->
+  </div>
 
-<table id="expense-table">
-  <tr>
-    <th id="category-color-header"></th>
-    <th>Expense</th>
-    <th>Amount</th>
-  </tr>
-  <tr>
-    <td class="color-box" id="category-color"></td>
-    <td editabletable="true">Row 1, Cell 1</td>
-    <td editabletable="true">Row 1, Cell 2</td>
-    <td class="button-box">
-      <a class="edit-icon" onclick="editRow()">
-        <img src="favicon.ico" id="edit-icon">
-      </a>
-    </td>
-  </tr>
-</table>
-</main>
+  <!-- Expenses table -> displays all previously entered expenses with edit buttons for each row -->
+  <table id="expense-table">
+    <tr>
+      <th id="category-color-header"></th>
+      <th>Time</th>
+      <th>Date of Search</th>
+      <th>Name of Person Researched</th>
+      <th>Search Goal</th>
+      <th>Search Location (Website)</th>
+      <th>Source Citation</th>
+      <th>Results</th>
+    </tr>
+    <tr>
+      <td class="color-box" id="category-color"></td>
+      <td editabletable="true">Row 1, Cell 1</td>
+      <td editabletable="true">Row 1, Cell 2</td>
+      <td class="edit-button-box">
+        <a class="edit-icon" onclick="editRow()">
+          <img src="favicon.ico" id="edit-icon">
+        </a>
+      </td>
+    </tr>
+  </table>
 
-<footer>
-  <span class="author">Makayla Black</span>
-  <a class="github-link"  href="https://github.com/mkaybug/startup.git">GitHub</a>
-</footer>
+  <script src="mypi.js"></script>
 
+  </main>
+
+  <!-- Footer is the same for each file -->
+  <footer>
+    <span class="author">Makayla Black</span>
+    <a class="github-link"  href="https://github.com/mkaybug/startup.git">GitHub</a>
+  </footer>
+
+
+<!-- Script borrowed from W3 Schools for a pie chart in case I decide to add one later
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
 <script>
@@ -136,5 +160,5 @@
       }]
     },
   });
-</script>
+</script> -->
 </html>

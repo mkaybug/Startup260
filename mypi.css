@@ -56,30 +56,28 @@
     font-size: 40px;
   }
   
-  .income-container {
+  .align-left-space-between {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-right: 20px;
   }
 
-  /* .table-left-pie-right {
+  .align-left {
     display: flex;
-  } */
+    justify-content: left;
+    align-items: center;
+    margin-right: 20px;
+  }
 
-  .input-and-table {
+  .group-two-items {
     flex: 1;
     margin-right: 20px;
   }
 
   .pie-chart-container {
-    min-width: 600px;
-    max-width: 600px;
-    margin-right: 20px;
-  }
-
-  #myChart {
-    max-width: 100%; /* Responsive width for the chart */
+    width: 300px;
+    height: 300px;
   }
 
   .row {
@@ -108,7 +106,7 @@
     margin-right: auto;
   }
   
-  .add-expense {
+  .flex-center-column {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -153,7 +151,7 @@
     background-color: #FF5757;
   }
 
-  .button-box {
+  .edit-button-box {
     border: none;
     height: 0;
     width: 0;
@@ -167,7 +165,7 @@
   button {
     color: #FFFFFF;
     background-color: #01A491;
-    padding: 11px;
+    padding: 13px;
     border: 1px solid #ccc;
     border-radius: 3px;
     width: 80px;

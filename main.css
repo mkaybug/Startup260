@@ -46,6 +46,10 @@ main {
   background-color: #A6A6A6
 }
 
+form {
+  margin-bottom: 10px;
+}
+
 input {
   background-color: #545454;
   padding: 13px;
@@ -66,6 +70,20 @@ input::placeholder {
   font-style: italic;
 }
 
+.login_form #username_error,
+.login_form #pass_error {
+  margin-top: 5px;
+  font-size: 14px;
+  font-style: italic;
+  color: #C62828;
+  background: rgba(255,0,0,0.1);
+  text-align: center;
+  padding: 5px 8px;
+  border-radius: 3px;
+  border: 1 px solid #EF9A9A;
+  display: none;
+}
+
 button {
   background-color: #01A491;
   padding: 13px;
@@ -73,12 +91,23 @@ button {
   border-radius: 3px;
   width: 210px;
   text-align: center;
+  font-size: 14px;
   
-  margin-bottom: 10px;
   margin-top: 10px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #008D7D;
+}
+
+.small-text {
+  font-size: 16px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 footer {
@@ -96,6 +125,10 @@ footer .author {
 }
 
 footer .github-link {
-  color: #01A491;
+  color: #00C2AB;
   margin-right: 10px;
+}
+
+.github-link:hover {
+  color: #01A491;
 }

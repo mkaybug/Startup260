@@ -21,22 +21,17 @@
     
 <main>
   <div>
-    <h1>Welcome</h1>
+    <h1>Create Account</h1>
     <!-- May need to make this form a "post" method -->
-    <form class="login_form" method="get" name="form" action="researchlog.html" onsubmit="return validated()">
+    <form class="login_form" method="get" name="form" action="index.html" onsubmit="return validated()">
       <input autocomplete="off" type="text" placeholder="Username" name="username"/>
-      <div id="username_error">Username does not exist</div>
+      <div id="username_error">Please enter username</div>
       <input type="password" placeholder="Password" name="password"/>
       <div id="pass_error">Please enter password</div>
-      <button type="submit">Login</button>
+      <button type="submit">Create Account</button>
     </form>
   </div>
-  <p class="small-text">or</p>
-  <a href="createaccount.html">
-    <button id="create-account-button" href="researchlog.html">Create New Account</button>
-  </a>
-  <script src="login.js"></script>  
-  <script src="createaccount.js"></script>
+  <script src="createaccount.js"></script>  
 </main>
 
 <footer>

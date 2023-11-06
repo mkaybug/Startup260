@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Startup CSS</title>
+    <link rel="stylesheet" href="researchlog.css" />
+  </head>
+
+  <!-- Header is the same for every file, I changed this from a menu list in my HTML submission -->
+  <header>
+    <h1>Tree Branch</h1>
+    <div>
+      <a class="menu" href="index.html">Login</a>
+      <a class="menu" href="researchlog.html">Research Log</a>
+      <a class="menu" href="about.html">About</a>
+    </div>
+  </header>
+
+  <main>
+    <div>
+      <div class="align-left-space-between">
+        <h1>Research Log</h1>
+        <form id=>
+          <div class="row" id="output"></div>
+          <input autocomplete="off" type="text" id="tree-name" placeholder="Edit tree name" />
+        </form>
+      </div>
+
+  <!-- Input fields for adding new expenses -->
+  <div class="flex-center-column">
+    <div>
+      <h2>New Entry</h2>
+      <input autocomplete="off" class="italics" type="text" name="time" id="time" placeholder="Hours" />
+      <input autocomplete="off" class="italics" type="text" name="date" id="date" placeholder="Date of search" />
+      <input autocomplete="off" class="italics" type="text" name="name" id="name" placeholder="Person researched" />
+      <input autocomplete="off" class="italics" type="text" name="search-goal" id="search-goal" placeholder="Search goal" />
+      <input autocomplete="off" class="italics" type="text" name="search-location" id="search-location" placeholder="Search location i.e. familysearch.org" />
+      <input autocomplete="off" class="italics" type="text" name="citation" id="citation" placeholder="Source citation" />
+      <input autocomplete="off" class="italics" type="text" name="search-results" id="search-results" placeholder="Search results" />
+      <button id="add-category" onclick="addEntry();">Add</button>
+    </div>
+  </div>
+
+  <!-- Expenses table -> displays all previously entered expenses with edit buttons for each row -->
+  <table id="expense-table">
+    <tr>
+      <th id="category-color-header"></th>
+      <th>Time</th>
+      <th>Date</th>
+      <th>Name</th>
+      <th>Search Goal</th>
+      <th>Search Location (Website)</th>
+      <th>Source Citation</th>
+      <th>Results</th>
+    </tr>
+  </table>
+
+  <script src="researchlog.js"></script>
+
+  </main>
+
+  <!-- Footer is the same for each file -->
+  <footer>
+    <span class="author">Makayla Black</span>
+    <a class="github-link"  href="https://github.com/mkaybug/startup.git">GitHub</a>
+  </footer>

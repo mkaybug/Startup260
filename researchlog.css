@@ -1,0 +1,183 @@
+* {
+  font-family: sans-serif;
+  color: #545454;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+header {
+  flex: 0 50px;
+  font-size: 18px;
+  background: #01A491;
+  color: white;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  color: #FFFFFF;
+  margin-right: 10px;
+}
+
+header h1 {
+  color: #FFFFFF;
+  font-size: 20px;
+  font-style: italic;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+main {
+  flex: 1;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: right;
+  /* overflow-x: hidden; Prevent sideways scrolling */
+  margin-left: 2em;
+  margin-right: 2em;
+  background-color: #FFFFFF;
+}
+
+main h1 {
+  font-size: 40px;
+}
+
+main h2 {
+  font-size: 30px;
+}
+
+.align-left-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.align-left {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.group-two-items {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.pie-chart-container {
+  width: 300px;
+  height: 300px;
+}
+
+.row {
+  font-size: 24px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+input, select {
+  background-color: #FFFFFF;
+  padding: 13px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 200px;
+  text-align: left;
+  
+  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex-center-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.italics {
+  font-style: italic;
+}
+
+table {
+  font-size: 18px;
+  margin: 0, auto;
+  margin-bottom: 100px;
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  font-size: 16px;
+}
+
+td {
+  border: 1px solid;
+  border-color: #545454;
+  padding: 12px;
+}
+
+.color-box {
+  width: 2px;
+  background-color: #FF5757;
+}
+
+button {
+  color: #FFFFFF;
+  background-color: #01A491;
+  padding: 13px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 80px;
+  text-align: center;
+
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button:hover {
+  background-color: #008D7D;
+}
+  
+footer {
+  flex: 0 50px;
+  background: #545454;
+  font-style: italic;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .author {
+  color: #FFFFFF;
+  margin-left: 10px;
+}
+
+footer .github-link {
+  color: #01A491;
+  margin-right: 10px;
+}

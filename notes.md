@@ -517,12 +517,12 @@ Right click on webpage and click on "inspect"
 # Node.js
 Running JavaScript from the Console
 ```
-➜	node -e “console.log(1+1)”
+➜  node -e “console.log(1+1)”
 2
 ```
 Running JavaScript file in Console
 ```
-➜	node index.js
+➜  node index.js
 ```
 Running JavaScript in Console – Interpretive mode
 ```

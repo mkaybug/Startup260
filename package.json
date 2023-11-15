@@ -1,0 +1,15 @@
+{
+  "name": "startup",
+  "version": "1.0.0",
+  "description": "As a computer science major with a passion for family history, I've noticed a need in the genealogy world. Professional genealogists want a space where they can work on a project, somewhere seperate from FamilySearch where their work can't be undone by a well meaning FamilyTree co-editor. There is software available that does this in part, but it's outdated, and doesn't have all the functionality I'd like to include. My Startup project is the start of that application. I will build a research log that is easy to use.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

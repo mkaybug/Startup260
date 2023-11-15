@@ -121,6 +121,7 @@ input, select {
 table {
   font-size: 18px;
   margin: 0, auto;
+  margin-top: 20px;
   margin-bottom: 100px;
   width: 100%;
 

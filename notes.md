@@ -513,3 +513,33 @@ Right click on webpage and click on "inspect"
 > ```
 
 > Constant that calls a function. Takes two parametersand uses arrow syntax. `()=> 3;` (A function in arrow syntax that takes no parameters and always returns 3.) Call this function after three seconds. Do you think he used the same example from the slides? Paste that example in.
+
+# Node.js
+Running JavaScript from the Console
+```
+➜  node -e “console.log(1+1)”
+2
+```
+Running JavaScript file in Console
+```
+➜  node index.js
+```
+Running JavaScript in Console – Interpretive mode
+```
+➜  node
+```
+Welcome to Node.js v16.15.1.
+```
+> 1+1
+2
+> console.log(‘hello’)
+hello
+```
+
+NPM knows how to access a massive repository of preexisting packages. You can search for packages on the [NPM website](https://www.npmjs.com/). However, before you start using NPM to install packages you need to initialize your code to use NPM. This is done by creating a directory that will contain your JavaScript and then running `npm init`. NPM will step you through a series of questions about the project you are creating. You can press the return key for each of questions if you want to accept the defaults. If you are always going to accept all of the defaults you can use `npm init -y` and skip the Q&A.
+
+```sh
+➜  mkdir npmtest
+➜  cd npmtest
+➜  npm init -y
+```

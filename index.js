@@ -14,16 +14,27 @@ app.use(express.static('public'));
 const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
-// // GetScores
-// apiRouter.get('/scores', (_req, res) => {
-//   res.send(scores);
-// });
+// GetTable
+apiRouter.get('/table', (_req, res) => {
+  res.send(table);
+});
 
-// // SubmitScore
-// apiRouter.post('/score', (req, res) => {
-//   scores = updateScores(req.body, scores);
-//   res.send(scores);
-// });
+// AddToTable
+apiRouter.post('/row', (req, res) => {
+  table = updateTable(req.body, table);
+  res.send(row);
+});
+
+// GetTreeName
+apiRouter.get('/treename', (_req, res) => {
+  res.send(treename);
+})
+
+// UpdateTreeName
+apiRouter.post('/treename', (req, res) => {
+  treename = updateTreeName(req.body, scores);
+  res.send(treename);
+});
 
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {

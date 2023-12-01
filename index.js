@@ -17,15 +17,11 @@ app.use(`/api`, apiRouter);
 // GetTable
 apiRouter.get('/table', (_request, response) => {
   response.send(table);
-  console.log("Table:")
-  console.log(table);
 });
 
 // AddToTable
 apiRouter.post('/row', (request, response) => {
   table.push(request.body);
-  console.log("Backend:")
-  console.log(table);
   response.send(table);  // Row later
 });
 

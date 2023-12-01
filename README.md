@@ -33,5 +33,7 @@ I had to change my HTML **a lot**, turns out it wasn't functional, but I learned
 ![Budgeting Tool (4)](https://github.com/mkaybug/startup/assets/144390772/5f09f229-5866-4955-9be1-40c3586302e4)
 ![Budgeting Tool (5)](https://github.com/mkaybug/startup/assets/144390772/ace6775a-8a5c-4d8b-b907-c27dc42d3fdb)
 
+# Service
+Honestly have no idea if I did this properly, but I've tried to set up support for backend service and endpoints.
 # JavaScript - Research Log Website
 The biggest change I made was converting my budgeting website to a research log for genealogists. I worked out the login page to take the username and password so later I can store them in a database. I also added errors that display if the username/password is not long enough. I also added the create an account page. I implemented JavaScript on the research log page to add rows to the research log table. If I have time later I'll make it so the user can delete/edit rows as well.

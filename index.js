@@ -15,32 +15,38 @@ const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
 // GetTable
-apiRouter.get('/table', (_req, res) => {
-  res.send(table);
+apiRouter.get('/table', (_request, response) => {
+  response.send(table);
+  console.log("Table:")
+  console.log(table);
 });
 
 // AddToTable
-apiRouter.post('/row', (req, res) => {
-  table = updateTable(req.body, table);
-  res.send(row);
+apiRouter.post('/row', (request, response) => {
+  table.push(request.body);
+  console.log("Backend:")
+  console.log(table);
+  response.send(table);  // Row later
 });
 
 // GetTreeName
-apiRouter.get('/treename', (_req, res) => {
-  res.send(treename);
+apiRouter.get('/treename', (_request, response) => {
+  response.send(treename);
 })
 
 // UpdateTreeName
-apiRouter.post('/treename', (req, res) => {
-  treename = updateTreeName(req.body, scores);
-  res.send(treename);
+apiRouter.post('/treename', (request, response) => {
+  treename = updateTreeName(request.body, scores);
+  response.send(treename);
 });
 
 // Return the application's default page if the path is unknown
-app.use((_req, res) => {
-  res.sendFile('index.html', { root: 'public' });
+app.use((_request, response) => {
+  response.sendFile('index.html', { root: 'public' });
 });
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+let table = []

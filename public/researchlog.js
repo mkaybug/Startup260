@@ -17,8 +17,70 @@ function displayTreeName(treeName) {
     return treeName + " Family Tree";
 }
 
+// Row class, I need row objects in multiple places, it made more sense
+// to create a class.
+class Row {
+    constructor(time, date, name, goal, location, citation, results) {
+        this.time = time;
+        this.date = date;
+        this.name = name;
+        this.goal = goal;
+        this.location = location;
+        this.citation = citation;
+        this.results = results;
+    }
+}
 
-// Takes Rent and percentage and on click adds a new row to the table.
+document.addEventListener('DOMContentLoaded', function() {
+    postTable();
+    console.log("Activated event listener")
+});
+
+// When website loads -> calls postRow recursively for table list
+async function postTable() {      // Should I save the list on the server and pass it in?
+    // So, I think the problem here is we're trying to get a table object, but it's not
+    // transferring properly. Would it be easier to just pass rows?
+    index = 0;
+
+    // while (getTable()) {
+    //     let tableRows = getTable();
+    //     console.log("Table Data:")
+    //     console.log
+    // }
+
+    tableRows = getTable();
+    console.log("getTable()")
+    console.log(getTable());
+    // The output says that the type return of getTable() is an object.
+    console.log(typeof getTable());
+    
+    if (tableRows.length > 0) {
+        tableRows.forEach(row => {
+            console.log("Frontend:")
+            console.log(row);
+            postRow(row);
+        });
+    }
+}
+
+async function getTable() {
+    console.log("getting table")
+    const response = await fetch('/api/table', {
+        method: 'GET',
+    });
+
+    if (!response.ok) {
+        throw new Error('Network response was not ok.')
+    }
+
+    const data = await response.json();
+    console.log("Data:")
+    console.log(data);
+    console.log(typeof data)
+    return data;
+}
+
+// Creates a row and pushes it onto table list -> calls postRow() which posts the row to the website
 function addEntry() {
     // Get input values
     let time = document.getElementById('time').value;
@@ -29,6 +91,17 @@ function addEntry() {
     let citation = document.getElementById('citation').value;
     let results = document.getElementById('search-results').value;
 
+    let row = new Row(time, date, name, goal, location, citation, results);
+    addRow(row);
+    // Call: row.<name of object> i.e. row.time
+
+    postRow(row);
+
+    // button.style.backgroundColor = "#01A491";
+}
+
+// Posts row on the website
+async function postRow(row) {
     // Get the html table
     // 0 = the first table
     let table = document.getElementsByTagName('table')[0];
@@ -51,17 +124,22 @@ function addEntry() {
     // Add values to the cells
     cell1.innerHTML = "";
     cell1.style.backgroundColor = "#FF5757";
-    cell2.innerHTML = time;
-    cell3.innerHTML = date;
-    cell4.innerHTML = name;
-    cell5.innerHTML = goal;
-    cell6.innerHTML = location;
-    cell7.innerHTML = citation;
-    cell8.innerHTML = results;
-
-    // button.style.backgroundColor = "#01A491";
+    cell2.innerHTML = row.time;
+    cell3.innerHTML = row.date;
+    cell4.innerHTML = row.name;
+    cell5.innerHTML = row.goal;
+    cell6.innerHTML = row.location;
+    cell7.innerHTML = row.citation;
+    cell8.innerHTML = row.results;
 }
 
+async function addRow(row) {
+    const response = await fetch('/api/row', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(row),
+    });
+}
 
 // Questions for TAs
 // 1. How to save table to local storage?

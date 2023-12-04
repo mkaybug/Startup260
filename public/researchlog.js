@@ -1,21 +1,22 @@
 // Waits for website to load/reload and calls postTable()
 document.addEventListener('DOMContentLoaded', function() {
     postTable();
+    postTreeName('');
 });
 
 // Displays the current value of treeName in the output field.
-if (localStorage.getItem("userTreeName") !== null) {
-    document.getElementById("output").innerHTML = displayTreeName(localStorage.getItem("userTreeName"));
-}
-else {
-    document.getElementById("output").innerHTML = displayTreeName("");
-}
+
+// const inputElement = document.getElementById("tree-name");
+// inputElement.addEventListener('input', function(event) {
+//     const inputValue = event.target.value;
+//     setTreeName(inputValue);
+// });
 
 // Listener -> listens for enter key in "treeName" field and updates the value of userTreeName accordingly.
 document.getElementById("tree-name").addEventListener("keydown", function(event) {
     if (event.keyCode === 13) {
         // localStorage.setItem("userTreeName", this.value);
-        // setTreeName(this.value)
+        setTreeName('Black')//this.value)
         console.log("Things entered")
     }
 });
@@ -26,9 +27,31 @@ async function setTreeName(treeName) {
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(treeName),
     });
+    postTreeName("Black")
 }
 
-function displayTreeName(treeName) {
+async function getTreeName() {
+    const response = await fetch('/api/treename', {
+        method: 'GET',
+    });
+
+    if (!response.ok) {
+        console.log(response);
+        console.log(response.json());
+        throw new Error('Network response was not ok.')
+    }
+
+    const data = await response.json();
+    return data;
+}
+
+// Displays the current value of treeName in the output field.
+async function postTreeName() {
+    let treeName = getTreeName();
+    document.getElementById("output").innerHTML = createTreeName(treeName);
+}
+
+function createTreeName(treeName) {
     return treeName + " Family Tree";
 }
 

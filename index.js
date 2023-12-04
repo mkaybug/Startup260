@@ -27,6 +27,9 @@ apiRouter.post('/row', (request, response) => {
 
 // GetTreeName
 apiRouter.get('/treename', (_request, response) => {
+  if (!treename) {
+    treename = 'Default Tree Name';
+  }
   response.send(treename);
 })
 

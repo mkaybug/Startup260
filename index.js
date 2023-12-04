@@ -25,20 +25,6 @@ apiRouter.post('/row', (request, response) => {
   response.send(table);  // Row later
 });
 
-// GetTreeName
-apiRouter.get('/treename', (_request, response) => {
-  if (!treename) {
-    treename = 'Default Tree Name';
-  }
-  response.send(treename);
-})
-
-// UpdateTreeName
-apiRouter.post('/treename', (request, response) => {
-  treename = updateTreeName(request.body, scores);
-  response.send(treename);
-});
-
 // Return the application's default page if the path is unknown
 app.use((_request, response) => {
   response.sendFile('index.html', { root: 'public' });

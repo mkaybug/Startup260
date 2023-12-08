@@ -70,6 +70,9 @@ input::placeholder {
   font-style: italic;
 }
 
+.login_form #username_length_error,
+.login_form #no_username_error,
+.login_form #used_username_error,
 .login_form #username_error,
 .login_form #pass_error {
   margin-top: 5px;

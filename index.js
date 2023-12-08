@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const DB = require('./database.js');
 
 // The service port. In production the frontend code is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
@@ -15,13 +16,15 @@ const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
 // GetTable
-apiRouter.get('/table', (_request, response) => {
+apiRouter.get('/table', async (_request, response) => {
+  const table = await DB.getTable();
   response.send(table);
 });
 
 // AddToTable
-apiRouter.post('/row', (request, response) => {
-  table.push(request.body);
+apiRouter.post('/row', async (request, response) => {
+  DB.addEntry(request.body);
+  const table = await DB.getTable();
   response.send(table);  // Row later
 });
 
@@ -33,5 +36,3 @@ app.use((_request, response) => {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
-
-let table = []

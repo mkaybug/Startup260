@@ -1,12 +1,14 @@
-// Validation Code for Inputs
+// Get username and password from HTML
 let username = document.forms['form']['username'];
 let password = document.forms['form']['password'];
 
+// Get username and password error codes from HTML
 let username_error = document.getElementById('username_error');
 let pass_error = document.getElementById('pass_error');
 
-username.addEventListener('textInput', username_Verify);
-password.addEventListener('textInput', password_Verify);
+// Listen for text input in username and password fields
+username.addEventListener('textInput', username_valid);
+password.addEventListener('textInput', password_valid);
 
 function validated() {
   if (username.value.length < 9) {
@@ -26,7 +28,13 @@ function validated() {
   createLogin();
 }
 
-function username_Verify() {
+function username_valid() {
+  // Must check to see if username already exists in database
+  
+  // if (getUserName(username.value) === True) {
+
+  // }
+
   if (username.value.length >= 8) {
     username.style.border = "1px solid silver";
     username_error.styledisplay = "none";
@@ -35,7 +43,7 @@ function username_Verify() {
   }
 }
 
-function pass_Verify() {
+function pass_valid() {
   if (password.value.length >= 5) {
     password.style.border = "1px solid silver";
     pass_error.styledisplay = "none";

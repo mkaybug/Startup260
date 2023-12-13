@@ -41,3 +41,6 @@ Honestly have no idea if I did this properly, but I've tried to set up support f
 
 # Database
 I got my service working properly first, and in the process deleted the field and dispay for the family tree name in order to make development easier for myself. Then, I set up and implemented a database for both the simon application and my startup application.
+
+# Login
+Implemented login for startup and deployed simon login to my domain. Startup login is in two parts, a login and a create account page.

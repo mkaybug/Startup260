@@ -14,8 +14,6 @@
   <h1>Tree Branch</h1>
   <div>
     <a class="menu" href="index.html">Login</a>
-    <a class="menu" href="researchlog.html">Research Log</a>
-    <a class="menu" href="about.html">About</a>
   </div>
 </header>
     
@@ -24,11 +22,11 @@
     <h1>Welcome</h1>
     <!-- May need to make this form a "post" method -->
     <form class="login_form" method="get" name="form" action="researchlog.html" onsubmit="return validated()">
-      <input autocomplete="off" type="text" placeholder="Username" name="username"/>
-      <div id="username_error">Username does not exist</div>
-      <input type="password" placeholder="Password" name="password"/>
-      <div id="pass_error">Please enter password</div>
-      <button type="submit">Login</button>
+      <input autocomplete="off" type="text" placeholder="Username" name="username" id="userName"/>
+      <div id="username_error"></div>
+      <input type="password" placeholder="Password" name="password" id="userPassword"/>
+      <div id="password_error"></div>
+      <button type="button" onclick="loginUser()">Login</button>
     </form>
   </div>
   <p class="small-text">or</p>

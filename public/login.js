@@ -1,46 +1,58 @@
-// Validation Code for Inputs
-let username = document.forms['form']['username'];
-let password = document.forms['form']['password'];
+async function loginUser() {
+  loginOrCreate(`/api/auth/login`);
+}
 
-let username_error = document.getElementById('username_error');
-let pass_error = document.getElementById('pass_error');
+async function createUser() {
+  loginOrCreate(`/api/auth/create`);
+}
 
-username.addEventListener('textInput', username_Verify);
-password.addEventListener('textInput', pass_Verify);
+async function loginOrCreate(endpoint) {
+  const userName = document.querySelector('#userName')?.value;
+  const password = document.querySelector('#userPassword')?.value;
+  const response = await fetch(endpoint, {
+    method: 'post',
+    body: JSON.stringify({ email: userName, password: password }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
 
-function validated() {
-  const checkUsername = localStorage.getItem("username");
-  console.log(localStorage.getItem("username"))
-
-  if (username.value.length < 9) {
-    username.style.border = "1px solid red";
+  if (response.ok) {
+    localStorage.setItem('userName', userName);
+    window.location.href = 'researchlog.html';
+  } else {
+    // Displays an error to the user
+    const body = await response.json();
+    username_error = document.querySelector('#password_error')
+    username_error.textContent = `⚠ Error: ${body.msg}`;
     username_error.style.display = "block";
-    username.focus();
-    return false;
-  }
-
-  if (password.value.length < 7) {
-    password.style.border = "1px solid red";
-    pass_error.style.display = "block";
-    password.focus();
-    return false;
   }
 }
 
-function username_Verify() {
-  if (username.value.length >= 8) {
-    username.style.border = "1px solid silver";
-    username_error.styledisplay = "none";
-    username.focus();
-    return true;
-  }
+function researchLog() {
+  window.location.href = 'researchlog.html';
 }
 
-function pass_Verify() {
-  if (password.value.length >= 6) {
-    password.style.border = "1px solid silver";
-    pass_error.styledisplay = "none";
-    password.focus();
-    return true;
+function logout() {
+  localStorage.removeItem('userName');
+  fetch(`/api/auth/logout`, {
+    method: 'delete',
+  }).then(() => (window.location.href = '/'));
+}
+
+async function getUser(email) {
+  // See if we have a user with the given email.
+  const response = await fetch(`/api/user/${email}`);
+  if (response.status === 200) {
+    return response.json();
+  }
+
+  return null;
+}
+
+function setDisplay(controlId, display) {
+  const playControlEl = document.querySelector(`#${controlId}`);
+  if (playControlEl) {
+    playControlEl.style.display = display;
   }
 }

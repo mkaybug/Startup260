@@ -74,7 +74,7 @@ input::placeholder {
 .login_form #no_username_error,
 .login_form #used_username_error,
 .login_form #username_error,
-.login_form #pass_error {
+.login_form #password_error {
   margin-top: 5px;
   font-size: 14px;
   font-style: italic;

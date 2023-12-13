@@ -14,6 +14,7 @@ class Row {
         this.location = location;
         this.citation = citation;
         this.results = results;
+        this.username = localStorage.getItem('userName');
     }
 }
 
@@ -23,7 +24,9 @@ async function postTable() {
     
     if (tableRows.length > 0) {
         tableRows.forEach(row => {
-            postRow(row);
+            if (row.username == localStorage.getItem('userName')) {
+                postRow(row);
+            }
         });
     }
 }

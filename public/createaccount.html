@@ -14,8 +14,6 @@
   <h1>Tree Branch</h1>
   <div>
     <a class="menu" href="index.html">Login</a>
-    <a class="menu" href="researchlog.html">Research Log</a>
-    <a class="menu" href="about.html">About</a>
   </div>
 </header>
     
@@ -23,17 +21,15 @@
   <div>
     <h1>Create Account</h1>
     <!-- May need to make this form a "post" method -->
-    <form class="login_form" method="get" name="form" action="index.html" onsubmit="return validated()">
-      <input autocomplete="off" type="text" placeholder="Username" name="username"/>
-      <div id="username_length_error">Username must be eight characters</div>
-      <div id="no_username_error">Please enter username</div>
-      <div id="used_username_error">That username is already taken</div>
-      <input type="password" placeholder="Password" name="password"/>
-      <div id="pass_error">Please enter password</div>
-      <button type="submit">Create Account</button>
+    <form class="login_form" method="get" name="form" action="index.html">
+      <input autocomplete="off" type="text" placeholder="Username" name="username" id="userName"/>
+      <div id="username_error"></div>
+      <input type="password" placeholder="Password" name="password" id="userPassword"/>
+      <div id="password_error"></div>
+      <button type="button" onclick="createUser()">Create Account</button>
     </form>
   </div>
-  <script src="createaccount.js"></script>  
+  <script src="login.js"></script>  
 </main>
 
 <footer>

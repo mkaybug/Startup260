@@ -1,7 +1,20 @@
+// Event messages
+const MessageExpire = 'messageExpire';
+const UserResearch = 'userResearch';
+
 // Waits for website to load/reload and calls postTable()
 document.addEventListener('DOMContentLoaded', function() {
     postTable();
 });
+
+function getUserName() {
+    return localStorage.getItem('userName') ?? 'Mystery user';
+}
+
+// Function to execute after five minutes
+function executeAfterFiveMinutes() {
+    broadcastEvent(getUserName(), MessageExpire, {});
+}
 
 // Row class, I need row objects in multiple places, it made more sense
 // to create a class.
@@ -47,6 +60,12 @@ async function getTable() {
 
 // Creates a row and pushes it onto table list -> calls postRow() which posts the row to the website
 function addEntry() {
+    console.log(getUserName())
+    console.log(UserResearch)
+    broadcastEvent(getUserName(), UserResearch, {});
+    // // Set a timer for five minutes
+    // setTimeout(() => executeAfterFiveMinutes(), 5 * 60 * 1000);
+
     // Get input values
     let time = document.getElementById('time').value;
     let date = document.getElementById('date').value;
@@ -61,7 +80,6 @@ function addEntry() {
     // Call: row.<name of object> i.e. row.time
 
     postRow(row);
-
     // button.style.backgroundColor = "#01A491";
 }
 
@@ -105,3 +123,77 @@ async function addRow(row) {
         body: JSON.stringify(row),
     });
 }
+
+// Functionality for peer communication using WebSocket
+let socket;
+
+function configureWebSocket() {
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    socket.onopen = (event) => {
+        displayMsg('system', 'game', 'connected');
+    };
+    socket.onclose = (event) => {
+        displayMsg('system', 'game', 'disconnected');
+    };
+    socket.onmessage = async (event) => {
+        const msg = JSON.parse(await event.data.text());
+        if (msg.type === MessageExpire) {
+            console.log("event ended");
+        } else if (msg.type === UserResearch) {
+            displayMsg(msg.from, `is researching`);
+        }
+    };
+    return socket; // Return the created socket
+}
+
+// Usage:
+// const socket = configureWebSocket(); // Get the WebSocket instance
+
+function displayMsg(cls, from, msg) {
+    const chatText = document.querySelector('#user-messages');
+    chatText.innerHTML =
+        `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+}
+
+let messageQueue = []; // Queue to hold messages while WebSocket is connecting
+
+function broadcastEvent(from, type, value) {
+    const event = {
+      from: from,
+      type: type,
+      name: value,
+    };
+    console.log(JSON.stringify(event)); // Corrected JSON.stringify() call
+    this.socket.send(JSON.stringify(event));
+  }
+  
+// function broadcastEvent(from, type, value) {
+//     const event = {
+//         from: from,
+//         type: type,
+//         value: value,
+//     };
+    
+//     function sendQueuedMessages() {
+//         while (messageQueue.length > 0 && socket.readyState === WebSocket.OPEN) {
+//             const nextMsg = messageQueue.shift();
+//             socket.send(JSON.stringify(nextMsg));
+//         }
+//     }
+
+//     if (socket.readyState === WebSocket.CONNECTING) {
+//         // If the socket is still connecting, queue the message
+//         messageQueue.push(event);
+//     } else if (socket.readyState === WebSocket.OPEN) {
+//         // If the socket is open, send the message
+//         socket.send(JSON.stringify(event));
+//     } else {
+//         // Handle other states, e.g., CLOSED or CLOSING
+//         console.error('WebSocket connection is not open. Message not sent.');
+//     }
+
+//     // Call function to send queued messages once the socket is open
+//     socket.addEventListener('open', sendQueuedMessages);
+// }
+

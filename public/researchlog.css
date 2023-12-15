@@ -56,6 +56,11 @@ main h1 {
   font-size: 40px;
 }
 
+#user-messages {
+  font-size: 16px;
+  font-style: italic;
+}
+
 main h2 {
   font-size: 30px;
 }

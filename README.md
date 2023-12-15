@@ -39,6 +39,9 @@ The biggest change I made was converting my budgeting website to a research log 
 # Service
 Honestly have no idea if I did this properly, but I've tried to set up support for backend service and endpoints.
 
+# WebSocket
+Added some basic WebSocket functionality. Changed the researchlog.js file and added some elements to the researchlog.html.
+
 # Database
 I got my service working properly first, and in the process deleted the field and dispay for the family tree name in order to make development easier for myself. Then, I set up and implemented a database for both the simon application and my startup application.
 

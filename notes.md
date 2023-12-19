@@ -543,3 +543,277 @@ NPM knows how to access a massive repository of preexisting packages. You can se
 ➜  cd npmtest
 ➜  npm init -y
 ```
+
+# Final Study Guide
+1. What ports are used for HTTP, HTTPS, SSH?
+> HTTP: 80, HTTPS: 443, SSH: 22.
+
+2. What do HTTP status codes in the 300, 400, 500 range indicate?
+> 300: Redirection. These codes tell the client (like a web browser) that the requested resources is available elsewhere or has been moved, and the client should take additional action to complete the request.
+> 400: Client errors. These codes are returned by the server whent he client's request has issues or is incorrect. Making it unable for the server to process the request.
+> 500: Server errors. These codes are returned by the server when it encounters an issue or is unable to fulfill a valid request made by the client.
+
+3. What does the HTTP header `content-type` allow you to do?
+> Allows the server to specify the type of content being sent to the client in the HTTP response. It indicates the media type of resource being sent. How server makes sure that the client interprets the content correctly.
+> Crucial because it helps the client understand how to properly interpret and display the content received from the server. Ex. For web browsers, the `content-type` header tells them howto render the content. For instance, HTML content will be rendered as a web page, while images will be displayed as images.
+> Common `content-type` values: `text/html` for HTML docs, `application/json` for JSON data, `image/jpeg` for JPEG images, `application/pdf` for PDF docs, `text/plain` for plain text.
+
+4. What do the following attributes of a cookie do?
+> Domain
+> Path
+> SameSite
+> HTTPOnly
+
+5. Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of /foo/bar?
+```
+// Sample middleware function
+const sampleMiddleware = (req, res, next) => {
+  // This middleware function logs the request method and URL path
+  console.log(`Request Method: ${req.method}, URL Path: ${req.url}`);
+  next(); // Calls the next middleware function in the chain
+};
+
+// Implementing middleware in an Express app
+const express = require('express');
+const app = express();
+
+// Using the middleware for all routes
+app.use(sampleMiddleware);
+
+// Example route
+app.get('/foo/bar', (req, res) => {
+  res.send('Hello from /foo/bar!');
+});
+
+// Start the server
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+```
+Output:
+```
+Request Method: GET, URL Path: /foo/bar
+```
+
+6. Given the following Express service code: What does the following JavaScript fetch return?
+```
+// userService.js - Example Express service code
+
+// This is a simple in-memory database simulation
+const users = [
+  { id: 1, username: 'user1', email: 'user1@example.com' },
+  { id: 2, username: 'user2', email: 'user2@example.com' },
+  // ... other user data
+];
+
+// Service functions for user-related operations
+const userService = {
+  // Get all users
+  getAllUsers: () => {
+    return users;
+  },
+
+  // Get user by ID
+  getUserById: (id) => {
+    return users.find(user => user.id === id);
+  },
+
+  // Add a new user
+  addUser: (user) => {
+    users.push(user);
+    return user;
+  },
+
+  // Update user details
+  updateUser: (id, updatedUser) => {
+    const index = users.findIndex(user => user.id === id);
+    if (index !== -1) {
+      users[index] = { ...users[index], ...updatedUser };
+      return users[index];
+    }
+    return null; // User not found
+  },
+
+  // Delete a user by ID
+  deleteUser: (id) => {
+    const index = users.findIndex(user => user.id === id);
+    if (index !== -1) {
+      const deletedUser = users.splice(index, 1);
+      return deletedUser[0];
+    }
+    return null; // User not found
+  }
+};
+
+module.exports = userService;
+```
+```
+// Using fetch to make an HTTP GET request
+fetch('https://jsonplaceholder.typicode.com/posts')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json(); // Parse the JSON response
+  })
+  .then(data => {
+    // Work with the data received
+    console.log(data); // Output the received data to the console
+  })
+  .catch(error => {
+    // Handle any errors that occurred during the fetch
+    console.error('Fetch Error:', error);
+  });
+```
+> Assuming the request to 'https://jsonplaceholder.typicode.com/posts' is successful and returns a valid JSON response, the code will log the received data (posts data in JSON format) to the console.
+
+7. Given the following MongoDB query select all the matching documents: `{ cost: { $gt: 10 }, name: /fran.*/}`
+> Interpretation: Cost field has a value greater than (`$gt`)`10`. Name field matches a regular expression (`/fran.*/`) where the name starts with "fran".
+> Examples:
+```
+{
+  "_id": 1,
+  "name": "Frank",
+  "cost": 15
+}
+```
+```
+{
+  "_id": 2,
+  "name": "Frances",
+  "cost": 20
+}
+```
+
+8. How should you store user passwords in a database?
+> By hashing them.
+
+9. Assuming the following Node.js service code is executing with websockets, what will be logged to the console of the web browser?
+```
+// Client-side JavaScript (running in a web browser)
+const socket = new WebSocket('ws://localhost:3000'); // Assuming WebSocket server runs on port 3000
+
+// Event listener for when the WebSocket connection is opened
+socket.addEventListener('open', (event) => {
+  console.log('WebSocket connection opened');
+});
+
+// Event listener for incoming messages from the WebSocket server
+socket.addEventListener('message', (event) => {
+  console.log('Message from server:', event.data);
+});
+
+// Event listener for WebSocket connection errors
+socket.addEventListener('error', (event) => {
+  console.error('WebSocket connection error:', event);
+});
+
+// Event listener for WebSocket connection closures
+socket.addEventListener('close', (event) => {
+  console.log('WebSocket connection closed');
+});
+
+```
+
+10. What is the WebSocket protocol used for?
+> Real time communication. WebSocket is suitible for applications where immediate data transfer is essential: chat applications, online gaming, financial trading platforms, live streaming, collaborative tools, etc.
+
+11. What is JSX and how are the curly braces rendered?
+> An extention to JavaScript syntax used with React and other libraries. Allows developers to write HTML-like code directly within JavaScript, facilitating the creation of user interfaces.
+> Cury braces in JSX are used to embed JavaScript expressions within JSX markup. They are used for dynamic content, enabling the evaluation of JavaScript expressions and variables inside JSX elements.
+
+12. Assuming a HTML document with a `<div id="root"></div>` element, what content will the following React component generate?
+```
+      function Welcome(props) {
+        return <h1>Hello, {props.name}</h1>;
+      }
+      function App() {
+        return (
+          <div>
+            <Welcome name="Sara" />
+            <Welcome name="Cahal" />
+            <Welcome name="Edite" />
+          </div>
+        );
+      }
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App />);
+```
+> Three `h1` elements inside the `div` element with the ID `'root'`. Each `h1` element will contain a greeting message using the `Welcome` component.
+
+13. Assuming a HTML document with a `<div id="root"></div>` element, what content will the following React component generate?
+```
+    function Numbers() { 
+      const numbers = [1, 2, 3, 4, 5];
+      const listItems = numbers.map((number) =>
+        <li>{number}</li>
+      );
+      return(<ul>{listItems}</ul>)
+    }
+    const root = ReactDOM.createRoot(document.getElementById('root')); 
+    root.render(<Numbers/>);
+```
+> Generates an unordered list `<ul>` containing list items `<li>` based ont he `numbers`.
+
+14. What does the following React component do?
+```
+function Example() {
+  // Declare a new state variable, which we'll call "count"  
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+```
+> This React component "Example" demonstrates the usage of React's `useState` hook to manage state within a functional component.
+> What does it do?
+> State Initialization: Uses the `useState` hook to declare a state varaiable named `count` and its corresponding setter function `setCount`. The initial value of `count` is set to 0 by passing 0 as an argument to useState(0).
+> Rendering: The component renders a `<div>` containing a `<p>` element displaying the current value of `count` using curly braces `{count}`. It also renders a button that says "Click me" and increases the count by 1.
+> State update: When the button is clicked the count is increased.
+
+15. What are React Hooks used for?
+> React hooks are tools that enable functional components in React to manage state, handle side effects, access context, and more. They make it easier to use component-related features previously available only in class components, simplifying how logic and behavior are added to functional components.
+> useState: Enables functional components to manage state.
+> useEffect: Allows functional components to perform side effects (data fetching, subscriptions, or manually changing the DOM) after rendering. Replaces lifecycle methods like `componentDidMount`, `componentDidUpdate`, and componentWillUnmount`.
+16. What is the useEffect hook used for?
+> useEffect in React lets you run code in functional components after they've rendered. It's perfect for doing things like fetching data, setting up subscriptions, or cleaning up after a component.
+
+17. What does this code do?
+```
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+```
+> Sets up the structure and routing for a React application using the React Router library.
+
+18. What role does npm play in web development?
+> NPM stands for Node Package Manager. It is used by developers to install and use code developed by others. NPM is like a big library.
+
+19. What does package.json do in a npm project?
+> package.json is like a project blueprint or map for a JavaScript project. It holds important information about the project including its dependencies, scripts, metadata, and configuration settings. It is the projects ID card and holds details about the project: what it's called, who made it, what other code needs work, and special commands to run it smoothly.
+
+20. What does the fetch function do?
+> The fetch function is used to get information from the web server or database.
+
+21. What does node.js do?
+> node.js allows JavaScript to work outside of the web browser on things like servers.
+
+22. What does Vite do?
+> Vite is used to build websites faster. It sets up the development environment for you.
